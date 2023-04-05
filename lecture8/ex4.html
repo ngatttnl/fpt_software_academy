@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .gallery-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #prev-btn,
+        #next-btn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #prev-btn:hover,
+        #next-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery-container">
+        <div class="gallery-image">
+            <img id="gallery-img" src="" alt="Gallery Image">
+        </div>
+        <div class="gallery-buttons">
+            <button id="prev-btn">Prev</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.gallery-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery-buttons button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+//use script tag here:
+let currentImageIndex = 0;
+const galleryImages = [
+    'https://picsum.photos/400/400?random=1',
+    'https://picsum.photos/400/400?random=2',
+    'https://picsum.photos/400/400?random=3',
+    'https://picsum.photos/400/400?random=4',
+    'https://picsum.photos/400/400?random=5',
+    'https://picsum.photos/400/400?random=6',
+    'https://picsum.photos/400/400?random=7',
+    'https://picsum.photos/400/400?random=8',
+    'https://picsum.photos/400/400?random=9',
+    'https://picsum.photos/400/400?random=10'
+];
+const galleryImg = document.getElementById('gallery-img');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+function showImage() {
+    galleryImg.src = galleryImages[currentImageIndex];
+}
+
+prevBtn.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    showImage();
+});
+
+nextBtn.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    showImage();
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'ArrowLeft') {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage();
+    } else if (event.code === 'ArrowRight') {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        showImage();
+    }
+});
+
+showImage();
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        let currentImageIndex = 0;
+        const galleryImages = [
+            'https://picsum.photos/400/400?random=1',
+            'https://picsum.photos/400/400?random=2',
+            'https://picsum.photos/400/400?random=3',
+            'https://picsum.photos/400/400?random=4',
+            'https://picsum.photos/400/400?random=5',
+            'https://picsum.photos/400/400?random=6',
+            'https://picsum.photos/400/400?random=7',
+            'https://picsum.photos/400/400?random=8',
+            'https://picsum.photos/400/400?random=9',
+            'https://picsum.photos/400/400?random=10'
+        ];
+        const galleryImg = document.getElementById('gallery-img');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function showImage() {
+            galleryImg.src = galleryImages[currentImageIndex];
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            showImage();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            showImage();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'ArrowLeft') {
+                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                showImage();
+            } else if (event.code === 'ArrowRight') {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                showImage();
+            }
+        });
+
+        showImage();
+    </script>
+</body>
+
+</html>

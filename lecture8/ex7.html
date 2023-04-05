@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 1rem;
+            
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            background-color: green;
+        }
+
+        nav a:hover {
+            background-color: goldenrod;
+        }
+
+        section {
+            margin: 2rem;
+            padding: 2rem;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to my website!</h1>
+        <p>This is the homepage.</p>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>Some information about me or my company.</p>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <p>Here are some of the services that we offer.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Get in touch with us!</p>
+    </section>
+
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        // Get all the sections and the navigation list
+        const sections = document.querySelectorAll('section');
+        const navList = document.querySelector('nav ul');
+
+        // Loop through each section and create a navigation link for it
+        for (let i = 0; i < sections.length; i++) {
+            const section = sections[i];
+            const link = document.createElement('a');
+            link.href = `#${section.id}`;
+            link.textContent = section.querySelector('h2').textContent;
+            const listItem = document.createElement('li');
+            listItem.appendChild(link);
+            navList.appendChild(listItem);
+        }
+
+        // Add smooth scrolling to the navigation links
+        const links = document.querySelectorAll('nav a');
+        for (let i = 0; i < links.length; i++) {
+            const link = links[i];
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanh Nga - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = "lecture4/" + item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="logo" href="index.html">Thanh Nga</a>
+        <!--<a target="_blank" href="projects/product_managment/index.html">Product</a>
+        <a target="_blank" href="projects/event_system/index.html">Event</a>
+        <a target="_blank" href="projects/personal_web/index.html">Personal Web</a>
+        <a target="_blank" href="projects/organization/index.html">Organization</a>
+        <a target="_blank" href="projects/project_system/index.html">Project</a>
+        -->
+
+        <div class="topnav-right">
+            <a href="index.html">Home</a>
+            <a href="lecture1.html">Lecture 1</a>
+            <a href="lecture2.html">Lecture 2</a>
+            <a href="lecture3.html">Lecture 3</a>
+            <a href="lecture4.html" class="active" >Lecture 4</a>
+            <a href="lecture5.html">Lecture 5</a>
+            <a href="lecture6.html">Lecture 6</a>
+            <a href="lecture7.html">Lecture 7</a>
+            <a href="lecture8.html">Lecture 8</a>
+            <a href="lecture9.html">Lecture 9</a>
+            <a class="call_to_action" href="tel: +0912345678">Call me</a>
+        </div>
+    </div>
+
+    <hr><br>
+    <div class="container">
+        <div class="frame">
+            <iframe id="myframe" src="lecture4/lecture.html"></iframe>
+
+        </div>
+        <div class="mnradio">
+            <h2>Một số thứ cần nhớ:</h2>
+            <input type="radio" id="lecture" checked name="fav_language" onclick="return radio_onclick('lecture')">
+            <label for="lecture">Những kiến thức cơ bản</label><br>
+
+            <h2>Danh sách các ví dụ:</h2>
+
+            <input type="radio" id="nav_menu" name="fav_language" onclick="return radio_onclick('nav_menu')">
+            <label for="nav_menu">Nav Menu</label><br>
+
+            <input type="radio" id="gridlayout" name="fav_language" onclick="return radio_onclick('gridlayout')">
+            <label for="gridlayout">Grid Layout</label><br>
+
+            <input type="radio" id="gallery" name="fav_language" onclick="return radio_onclick('gallery')">
+            <label for="gallery">Gallery</label><br>
+
+            <input type="radio" id="card" name="fav_language" onclick="return radio_onclick('card')">
+            <label for="card">Card</label><br>
+
+            <input type="radio" id="table" name="fav_language" onclick="return radio_onclick('table')">
+            <label for="table">Table</label><br>
+
+            <input type="radio" id="stickyheader" name="fav_language" onclick="return radio_onclick('stickyheader')">
+            <label for="stickyheader">Sticky header</label><br>
+
+            <input type="radio" id="form" name="fav_language" onclick="return radio_onclick('form')">
+            <label for="form">Form</label><br>
+
+            <input type="radio" id="landing" name="fav_language" onclick="return radio_onclick('landing')">
+            <label for="landing">Landing Page</label><br>
+
+            <input type="radio" id="timeline" name="fav_language" onclick="return radio_onclick('timeline')">
+            <label for="timeline">Timeline</label><br>
+
+            <input type="radio" id="iframe" name="fav_language" onclick="return radio_onclick('iframe')">
+            <label for="iframe">Iframe</label><br>
+
+            
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

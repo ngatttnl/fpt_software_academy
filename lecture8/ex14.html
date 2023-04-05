@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        .game {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            background-color: #333;
+        }
+
+        .reset {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game">
+        <div class="cards">
+            <div class="card" data-value="1"></div>
+            <div class="card" data-value="1"></div>
+            <div class="card" data-value="2"></div>
+            <div class="card" data-value="2"></div>
+            <div class="card" data-value="3"></div>
+            <div class="card" data-value="3"></div>
+        </div>
+        <button class="reset">Reset</button>
+    </div>
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+                <div class="game">
+    <div class="cards">
+        <div class="card" data-value="1"></div>
+        <div class="card" data-value="1"></div>
+        <div class="card" data-value="2"></div>
+        <div class="card" data-value="2"></div>
+        <div class="card" data-value="3"></div>
+        <div class="card" data-value="3"></div>
+    </div>
+    <button class="reset">Reset</button>
+    </div>
+                  
+                
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+.game {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    }
+    
+    .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    }
+    
+    .card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #ccc;
+    cursor: pointer;
+    }
+    
+    .card.flipped {
+    background-color: #333;
+    }
+    
+    .reset {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    }
+                  
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        const cards = document.querySelectorAll('.card');
+        let hasFlippedCard = false;
+        let lockBoard = false;
+        let firstCard, secondCard;
+        let matches = 0;
+
+        function flipCard() {
+            if (lockBoard) return;
+            if (this === firstCard) return;
+
+            this.classList.add('flipped');
+
+            if (!hasFlippedCard) {
+                hasFlippedCard = true;
+                firstCard = this;
+                return;
+            }
+
+            secondCard = this;
+            checkForMatch();
+        }
+
+        function checkForMatch() {
+            let isMatch = firstCard.dataset.value === secondCard.dataset.value;
+
+            isMatch ? disableCards() : unflipCards();
+        }
+
+        function disableCards() {
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+
+            resetBoard();
+            matches++;
+
+            if (matches === cards.length / 2) {
+                alert('You won!');
+            }
+        }
+
+        function unflipCards() {
+            lockBoard = true;
+
+            setTimeout(() => {
+                firstCard.classList.remove('flipped');
+                secondCard.classList.remove('flipped');
+
+                resetBoard();
+            }, 1000);
+        }
+
+        function resetBoard() {
+            [hasFlippedCard, lockBoard] = [false, false];
+            [firstCard, secondCard] = [null, null];
+        }
+
+        function resetGame() {
+            cards.forEach(card => {
+                card.classList.remove('flipped');
+                card.addEventListener('click', flipCard);
+            });
+
+            resetBoard();
+            matches = 0;
+        }
+
+        cards.forEach(card => card.addEventListener('click', flipCard));
+        document.querySelector('.reset').addEventListener('click', resetGame);
+
+    </script>
+</body>
+
+</html>

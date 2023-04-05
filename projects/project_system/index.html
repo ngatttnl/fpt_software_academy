@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quản lý dự án</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Quản lý dự án</h1>
+	<div class="row">
+		<div class="search-container">
+		  <input type="text" placeholder="Tìm kiếm..." name="search">
+		  <button type="submit">Tìm kiếm</button>
+		</div>
+		<div class="button-container">
+		  <a href="add.html">Thêm mới</a>
+		</div>
+	  </div>
+	  
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Tên dự án</th>
+				<th>Mô tả</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Danh sách dự án sẽ được hiển thị ở đây -->
+		</tbody>
+	</table>
+	
+	<script type="text/javascript" src="script.js"></script>
+</body>
+<script>
+    const projectList = [  { id: 1, name: 'Project 1', description: 'Description of Project 1' },  { id: 2, name: 'Project 2', description: 'Description of Project 2' },  { id: 3, name: 'Project 3', description: 'Description of Project 3' },];
+
+const tbody = document.querySelector('tbody');
+
+projectList.forEach(project => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>${project.id}</td>
+    <td>${project.name}</td>
+    <td>${project.description}</td>
+    <td>
+      <button class="edit-btn">Edit</button>
+    </td>
+  `;
+  tbody.appendChild(tr);
+});
+
+</script>
+</html>

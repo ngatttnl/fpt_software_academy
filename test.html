@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lecture 1 - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .text-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 50px);
+            gap: 10px;
+            border: 1px solid black;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: [col1-start] 1fr [col2-start] 1fr [col3-start] 1fr [col3-end];
+            grid-template-rows: [row1-start] 50px [row2-start] 50px [row3-start] 50px [row3-end];
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+        <h2>Inline Grid Example</h2>
+        <p>Here is some text with a grid:</p>
+        <div class="grid-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </div>
+        <p>And here is some more text  ss.</p>
+    </div>
+
+
+</body>
+
+</html>

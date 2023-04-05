@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Hero section */
+        #hero {
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #hero button {
+            background-color: #333;
+            border: none;
+            border-radius: 2rem;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+
+        /* Features section */
+        #features {
+            background-color: #fff;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        #features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            margin: 2rem 0;
+        }
+
+        .feature img {
+            max-width: 100%;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .feature p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Testimonials section */
+        #testimonials {
+            background-color: #f2f2f2;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        #testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            margin: 2rem 0;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            height: 8rem;
+            width: 8rem;
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial p:last-of-type {
+            font-weight: bold;
+        }
+
+        /* Call-to-action */
+        #cta {
+            background-color: #333;
+            color: #fff;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        #cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        #cta button {
+            background-color: #fff;
+            border: none;
+            border-radius: 2rem;
+            color: #333;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>LANDING PAGE</h2>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Download</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero section -->
+    <section id="hero">
+        <h1>My Mobile App</h1>
+        <p>A powerful app that makes your life easier</p>
+        <button>Download now</button>
+    </section>
+
+    <!-- Features section -->
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature">
+            <img src="https://picsum.photos/200/200?random=1" alt="Feature 1">
+            <h3>Feature 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="feature">
+            <img src="https://picsum.photos/200/200?random=2" alt="Feature 2">
+            <h3>Feature 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="feature">
+            <img src="https://picsum.photos/200/200?random=3" alt="Feature 3">
+            <h3>Feature 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials section -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <img src="https://picsum.photos/100/100?random=1" alt="Testimonial 1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at
+                a nibh. Integer quis enim in magna aliquam tempor.</p>
+            <p>- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <img src="https://picsum.photos/100/100?random=2" alt="Testimonial 2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at
+                a nibh. Integer quis enim in magna aliquam tempor.</p>
+            <p>- Jane Smith</p>
+        </div>
+        <div class="testimonial">
+            <img src="https://picsum.photos/100/100?random=3" alt="Testimonial 3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at
+                a nibh. Integer quis enim in magna aliquam tempor.</p>
+            <p>- Bob Johnson</p>
+        </div>
+    </section>
+
+    <!-- Call-to-action -->
+    <section id="cta">
+        <h2>Download My Mobile App Today</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at a
+            nibh. Integer quis enim in magna aliquam tempor.</p>
+        <button>Download now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2022</p>
+    </footer>
+
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+ <!-- Navigation -->
+ <nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Download</a></li>
+    </ul>
+</nav>
+
+<!-- Hero section -->
+<section id="hero">
+    <h1>My Mobile App</h1>
+    <p>A powerful app that makes your life easier</p>
+    <button>Download now</button>
+</section>
+
+<!-- Features section -->
+<section id="features">
+    <h2>Features</h2>
+    <div class="feature">
+        <img src="https://picsum.photos/200/200?random=1" alt="Feature 1">
+        <h3>Feature 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="feature">
+        <img src="https://picsum.photos/200/200?random=2" alt="Feature 2">
+        <h3>Feature 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="feature">
+        <img src="https://picsum.photos/200/200?random=3" alt="Feature 3">
+        <h3>Feature 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</section>
+
+<!-- Testimonials section -->
+<section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+        <img src="https://picsum.photos/100/100?random=1" alt="Testimonial 1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at
+            a nibh. Integer quis enim in magna aliquam tempor.</p>
+        <p>- John Doe</p>
+    </div>
+    <div class="testimonial">
+        <img src="https://picsum.photos/100/100?random=2" alt="Testimonial 2">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at
+            a nibh. Integer quis enim in magna aliquam tempor.</p>
+        <p>- Jane Smith</p>
+    </div>
+    <div class="testimonial">
+        <img src="https://picsum.photos/100/100?random=3" alt="Testimonial 3">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at
+            a nibh. Integer quis enim in magna aliquam tempor.</p>
+        <p>- Bob Johnson</p>
+    </div>
+</section>
+
+<!-- Call-to-action -->
+<section id="cta">
+    <h2>Download My Mobile App Today</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis sit amet mi facilisis bibendum at a
+        nibh. Integer quis enim in magna aliquam tempor.</p>
+    <button>Download now</button>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>Copyright © 2022</p>
+</footer>
+                  
+
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero section */
+#hero {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#hero button {
+    background-color: #333;
+    border: none;
+    border-radius: 2rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+/* Features section */
+#features {
+    background-color: #fff;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.feature img {
+    max-width: 100%;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.feature p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Testimonials section */
+#testimonials {
+    background-color: #f2f2f2;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.testimonial img {
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial p:last-of-type {
+    font-weight: bold;
+}
+
+/* Call-to-action */
+#cta {
+    background-color: #333;
+    color: #fff;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+#cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#cta button {
+    background-color: #fff;
+    border: none;
+    border-radius: 2rem;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 1rem;
+    text-align: center;
+}   
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

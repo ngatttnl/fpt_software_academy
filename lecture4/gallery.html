@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .gallery-item {
+            width: calc(33.33% - 10px);
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .gallery {
+                justify-content: center;
+            }
+
+            .gallery-item {
+                width: 100%;
+            }
+        }
+
+        .lightbox {
+            display: block;
+            position: relative;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+        }
+
+        .lightbox:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox:hover:before {
+            opacity: 1;
+        }
+
+        .lightbox:after {
+            content: "\f00d";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-family: FontAwesome;
+            font-size: 40px;
+            color: #fff;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox:hover:after {
+            opacity: 1;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <a href="https://picsum.photos/200/200?random=1" class="lightbox">
+                <img src="https://picsum.photos/200/200?random=1">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/200/200?random=2" class="lightbox">
+                <img src="https://picsum.photos/200/200?random=2">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/200/200?random=3" class="lightbox">
+                <img src="https://picsum.photos/200/200?random=3">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/200/200?random=4" class="lightbox">
+                <img src="https://picsum.photos/200/200?random=4">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/200/200?random=5" class="lightbox">
+                <img src="https://picsum.photos/200/200?random=5">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://picsum.photos/200/200?random=6" class="lightbox">
+                <img src="https://picsum.photos/200/200?random=6">
+            </a>
+        </div>
+    </div>
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<div class="gallery">
+    <div class="gallery-item">
+        <a href="https://picsum.photos/200/200?random=1" class="lightbox">
+            <img src="https://picsum.photos/200/200?random=1">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="https://picsum.photos/200/200?random=2" class="lightbox">
+            <img src="https://picsum.photos/200/200?random=2">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="https://picsum.photos/200/200?random=3" class="lightbox">
+            <img src="https://picsum.photos/200/200?random=3">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="https://picsum.photos/200/200?random=4" class="lightbox">
+            <img src="https://picsum.photos/200/200?random=4">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="https://picsum.photos/200/200?random=5" class="lightbox">
+            <img src="https://picsum.photos/200/200?random=5">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="https://picsum.photos/200/200?random=6" class="lightbox">
+            <img src="https://picsum.photos/200/200?random=6">
+        </a>
+    </div>
+</div>
+
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery-item {
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .gallery {
+        justify-content: center;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+}
+
+.lightbox {
+    display: block;
+    position: relative;
+}
+
+.lightbox img {
+    max-width: 100%;
+}
+
+.lightbox:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox:hover:before {
+    opacity: 1;
+}
+
+.lightbox:after {
+    content: "\f00d";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: FontAwesome;
+    font-size: 40px;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox:hover:after {
+    opacity: 1;
+}
+        
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

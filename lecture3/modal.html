@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal:target {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 1rem;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: none;
+            margin-top: 1rem;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            padding: 15px 15px;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+        .modal-content button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+
+    <h2>Modal window that displays additional content </h2>
+
+    <button class="button"><a href="#modal">Open Modal</a></button>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Modal Title</h2>
+            <p>Modal content goes here.</p>
+            <button><a href="#">Close Modal</a></button>
+        </div>
+    </div>
+
+
+    <!--CODE-->
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<!--START CODE-->
+<button class="button"><a href="#modal">Open Modal</a></button>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2>Modal Title</h2>
+        <p>Modal content goes here.</p>
+        <button><a href="#">Close Modal</a></button>
+    </div>
+</div>
+<!--END CODE-->                 
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.modal:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 1rem;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 1rem;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+.modal-content button a {
+    color: #fff;
+    text-decoration: none;
+}
+            </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const menu = document.querySelector('.menu');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('nav-active');
+        });
+
+    </script>
+</head>
+
+<body>
+    <h2>Menu</h2>
+    <div class="menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Liên hệ</a>
+    </div>
+
+    <p>Ở đây, chúng ta sử dụng thuộc tính "display: flex" để đưa phần tử cha ".menu" vào chế độ Flexbox. Chúng ta sử
+        dụng thuộc tính "flex-direction: column" để sắp xếp các mục menu theo chiều dọc, mỗi mục menu nằm trên một dòng.
+        Sau đó, chúng ta sử dụng thuộc tính "justify-content: center" và "align-items: center" để căn giữa các mục menu
+        theo chiều ngang và chiều dọc.
+
+        Chúng ta cũng sử dụng thuộc tính "padding" và "margin" để tạo khoảng cách giữa các mục menu và giữa các mục menu
+        và viền của phần tử cha. Cuối cùng, chúng ta sử dụng thuộc tính "transition" để tạo hiệu ứng hover khi người
+        dùng di chuột qua các mục menu.</p>
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+    <div class="menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Liên hệ</a>
+    </div>
+
+
+    </textarea>
+    </div>
+    <div class="column1">
+        <pre>
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    }
+    
+    .menu a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+    }
+    
+    .menu a:hover {
+    background-color: #333;
+    color: #fff;
+    }
+                         
+      </pre>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<h1>Code</h1>
+   <div class="row">
+    <div class="column1">
+        <textarea disabled class="code">
+
+        </textarea>
+    </div>
+    <div class="column1">
+        <pre>
+            
+        </pre>
+    </div>
+   </div>

@@ -1,0 +1,94 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ffd700;
+  }
+
+  main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+  /*product*/
+  .product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .product h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .product p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .product span {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    margin-left: auto;
+  }
+
+  /*Code*/
+.row {
+    display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column1 {
+    flex: 30%;
+    padding: 10px;
+    height: 500px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column2 {
+    flex: 70%;
+    padding: 10px;
+    height: 500px;
+    /* Should be removed. Only for demonstration */
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lecture 1 - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = "lecture2/" + item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="logo" href="index.html">Thanh Nga</a>
+       <!--<a target="_blank" href="projects/product_managment/index.html">Product</a>
+        <a target="_blank" href="projects/event_system/index.html">Event</a>
+        <a target="_blank" href="projects/personal_web/index.html">Personal Web</a>
+        <a target="_blank" href="projects/organization/index.html">Organization</a>
+        <a target="_blank" href="projects/project_system/index.html">Project</a>
+        --> 
+        <div class="topnav-right">
+            <a href="index.html">Home</a>
+            <a href="lecture1.html" >Lecture 1</a>
+            <a class="active" href="lecture1.html" >Lecture 2</a>
+            <a href="lecture3.html">Lecture 3</a>
+            <a href="lecture4.html">Lecture 4</a>
+            <a href="lecture5.html">Lecture 5</a>
+            <a href="lecture6.html">Lecture 6</a>
+            <a href="lecture7.html">Lecture 7</a>
+            <a href="lecture8.html">Lecture 8</a>
+            <a href="lecture9.html">Lecture 9</a>
+            <a class="call_to_action" href="tel: +0912345678">Call me</a>
+        </div>
+    </div>
+
+    <hr><br>
+    <div class="container">
+
+        <div class="frame">
+            <iframe id="myframe" src="lecture2/svg.html"></iframe>
+
+        </div>
+        <div class="mnradio">
+            <h2>Danh sách các ví dụ:</h2>
+            <input type="radio" id="svg" checked name="fav_language"
+                onclick="return radio_onclick('svg')">
+            <label for="svg">SVG Demo</label><br>
+
+            <input type="radio" id="faq" name="fav_language"
+                onclick="return radio_onclick('faq')">
+            <label for="faq">Unordered List</label><br>
+
+            <input type="radio" id="card" name="fav_language"
+                onclick="return radio_onclick('card')">
+            <label for="card">Card Layout</label><br>
+
+            
+            <input type="radio" id="thumbnail" name="fav_language"
+                onclick="return radio_onclick('thumbnail')">
+            <label for="thumbnail">Image</label><br>
+
+            <input type="radio" id="slider" name="fav_language"
+                onclick="return radio_onclick('slider')">
+            <label for="slider">Slider</label><br>
+
+            <h2>Một số thứ cần nhớ:</h2>
+            <ol>
+                <li><a href="https://validator.w3.org/">Validate HTML</a></li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

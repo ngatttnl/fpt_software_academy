@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+      .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-1-1 {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+}
+
+.cell-2-1, .cell-2-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Grid</h2>
+
+    <div class="grid-container">
+      <div class="cell-1-1" colspan="2">
+        <div class="flex-container">
+          <h2>Your Heading</h2>
+          <p>Your paragraph text</p>
+        </div>
+      </div>
+      <div class="cell-2-1">
+        <img src="https://picsum.photos/300/300?random=1" alt="your-image">
+        <img src="https://picsum.photos/300/300?random=2" alt="your-image">
+      </div>
+      <div class="cell-2-2">
+        <img src="https://picsum.photos/300/300?random=3" alt="your-image">
+        <img src="https://picsum.photos/300/300?random=4" alt="your-image">
+      </div>
+    </div>
+    
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<div class="grid-container">
+  <div class="cell-1-1" colspan="2">
+    <div class="flex-container">
+      <h2>Your Heading</h2>
+      <p>Your paragraph text</p>
+    </div>
+  </div>
+  <div class="cell-2-1">
+    <img src="https://picsum.photos/300/300?random=1" alt="your-image">
+    <img src="https://picsum.photos/300/300?random=2" alt="your-image">
+  </div>
+  <div class="cell-2-2">
+    <img src="https://picsum.photos/300/300?random=3" alt="your-image">
+    <img src="https://picsum.photos/300/300?random=4" alt="your-image">
+  </div>
+</div>
+            
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-1-1 {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+}
+
+.cell-2-1, .cell-2-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}              
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

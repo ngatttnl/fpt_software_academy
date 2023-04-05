@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Responsive</h2>
+    <p>
+        Một số điều cần nhớ:
+    <ul>
+        <li> Điều chỉnh giao diện trên các thiết bị khác nhau bằng cách sử dụng các media queries và các breakpoint.
+        </li>
+        <li> Chọn kích thước và cách sắp xếp nội dung cho phù hợp với màn hình, bằng cách sử dụng các đơn vị đo linh
+            hoạt như %, vw, vh, em, rem.</li>
+        <li> Sử dụng một lưới thiết kế (grid system) để giúp sắp xếp các phần tử trên trang web theo một cách đồng
+            nhất và thuận tiện.</li>
+        <li> Tối ưu hóa hình ảnh và đa phương tiện để giảm thời gian tải trang và tối ưu hóa hiển thị trên các thiết
+            bị khác nhau.</li>
+        <li> Đảm bảo rằng trang web của bạn còn hoạt động tốt khi được truy cập từ các thiết bị có kích thước khác
+            nhau, bao gồm cả màn hình lớn, máy tính bảng, điện thoại di động và các thiết bị khác.</li>
+        <li> Kiểm thử (test) và sửa lỗi để đảm bảo rằng trang web của bạn hoạt động tốt trên tất cả các thiết bị và
+            trình
+            duyệt.</li>
+    </ul>
+    </p>
+
+    <h2>Media queries</h2>
+    <p>
+        Media queries là một công cụ mạnh mẽ trong CSS để tạo ra thiết kế responsive. Nó cho phép các trang web hiển thị
+        khác nhau tùy thuộc vào kích thước màn hình hoặc thiết bị của người dùng. Khi sử dụng media queries, ta có thể
+        xác định các phương tiện hiển thị cụ thể cho mỗi kích thước màn hình khác nhau.
+
+        <br>Media queries được sử dụng bằng cách sử dụng từ khóa @media trong CSS. Cú pháp chung của một media query như
+        sau:
+
+        </pre>
+        @media (media feature) {
+        /* CSS styles */
+        }
+        </pre>
+        Trong đó, media feature là một số tính năng mà chúng ta sử dụng để xác định các điều kiện cho media query. Ví
+        dụ, các media feature thông thường bao gồm:
+    <ul>
+        <li> min-width: kích thước màn hình tối thiểu</li>
+        <li> max-width: kích thước màn hình tối đa</li>
+        <li> orientation: hướng của thiết bị</li>
+        <li> aspect-ratio: tỷ lệ khung hình của màn hình</li>
+        <li> resolution: độ phân giải của màn hình</li>
+    </ul>
+    <br> Chúng ta có thể sử dụng bất kỳ số lượng media feature nào và kết hợp chúng với nhau để tạo ra các điều kiện
+    cho
+    media query.
+
+    <br>Ngoài ra, media queries có thể được sử dụng để tùy chỉnh các thuộc tính CSS, chẳng hạn như màu sắc, kích thước,
+    khoảng cách, v.v. tùy theo kích thước màn hình. Bằng cách này, chúng ta có thể cải thiện trải nghiệm người dùng
+    trên các thiết bị khác nhau mà không cần tạo nhiều phiên bản của cùng một trang web.
+
+    <br><br>Ví dụ, đoạn CSS sau sẽ thay đổi font-size của đoạn văn bản khi chiều rộng của màn hình nhỏ hơn hoặc bằng
+    600px:
+
+    <pre>
+@media (max-width: 600px) {
+  p {
+    font-size: 14px;
+  }
+}
+</pre>
+    <br>Khi kích thước màn hình đạt đến 600px hoặc nhỏ hơn, font-size của đoạn văn bản sẽ được thay đổi thành 14px.
+    </p>
+
+    <h2>Một số ví dụ dùng media queries</h2>
+    <ol>
+        <li>Sử dụng media query với not để áp dụng kiểu CSS chỉ cho các màn hình lớn hơn 768px:
+            arduino
+            <pre>
+@media not screen and (max-width: 768px) {
+  /* CSS styles for screens larger than 768px */
+}
+</pre>
+            @media not screen và (max-width: 768px) sẽ áp dụng các kiểu cho màn hình không phải là màn hình và có chiều
+            rộng lớn
+            hơn 768 pixel.
+            <br>Nói cách khác, mã này sẽ áp dụng kiểu cho các thiết bị như máy in, máy chiếu hoặc các thiết bị không có
+            màn hình
+            (not screen), và cho màn hình có chiều rộng lớn hơn 768 pixel.
+        </li>
+        <li>Sử dụng media query với only để áp dụng kiểu CSS chỉ cho các thiết bị iPhone 6, 7 và 8:
+            <pre>
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  /* CSS styles for iPhone 6, 7, and 8 */
+}
+</pre>
+        </li>
+        <li>Sử dụng media query với print để áp dụng kiểu CSS chỉ cho trang in ấn:
+            <pre>
+@media print {
+  /* CSS styles for printing */
+}
+</pre>
+        </li>
+        <li>Sử dụng media query để áp dụng kiểu CSS chỉ cho các màn hình có độ phân giải cao hơn 300dpi:
+            <pre>
+@media screen and (min-resolution: 300dpi) {
+  /* CSS styles for high-resolution screens */
+}
+</pre>
+        </li>
+        <li>Sử dụng media query để áp dụng kiểu CSS chỉ cho các màn hình hiển thị ở chế độ ngang:
+            <pre>
+@media screen and (orientation: landscape) {
+  /* CSS styles for landscape screens */
+}
+</pre>
+        </li>
+    </ol>
+
+
+
+</body>
+
+</html>

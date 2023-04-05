@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .left-column {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-column {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2,
+        p {
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <h2>2 columns layout</h2>
+
+    <div class="container">
+        <div class="left-column">
+            <h2>Cột trái</h2>
+            <p>Đây là nội dung trong cột trái</p>
+        </div>
+        <div class="right-column">
+            <h2>Cột phải</h2>
+            <p>Đây là nội dung trong cột phải</p>
+        </div>
+    </div>
+
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<div class="container">
+    <div class="left-column">
+        <h2>Cột trái</h2>
+        <p>Đây là nội dung trong cột trái</p>
+    </div>
+    <div class="right-column">
+        <h2>Cột phải</h2>
+        <p>Đây là nội dung trong cột phải</p>
+    </div>
+</div>
+                  
+
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+.container {
+    display: flex;
+    }
+    
+.left-column {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+.right-column {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+h2, p {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    }
+                  
+        
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

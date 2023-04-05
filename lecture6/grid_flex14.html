@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover .caption {
+      opacity: 1;
+    }
+  </style>
+  <script>
+
+  </script>
+</head>
+
+<body>
+
+  <h2>Grid</h2>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/400?random=1" alt="Photo 1">
+      <div class="caption">Caption 1</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/400?random=2" alt="Photo 2">
+      <div class="caption">Caption 2</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/400?random=3" alt="Photo 3">
+      <div class="caption">Caption 3</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/400?random=4" alt="Photo 4">
+      <div class="caption">Caption 4</div>
+    </div>
+  </div>
+
+
+  <h1>Code</h1>
+  <div class="row">
+    <div class="column1">
+      <textarea class="code">
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/400?random=1" alt="Photo 1">
+    <div class="caption">Caption 1</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/400?random=2" alt="Photo 2">
+    <div class="caption">Caption 2</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/400?random=3" alt="Photo 3">
+    <div class="caption">Caption 3</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/400?random=4" alt="Photo 4">
+    <div class="caption">Caption 4</div>
+  </div>
+</div>
+        
+            
+      </textarea>
+    </div>
+    <div class="column2">
+      <pre>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .caption {
+  opacity: 1;
+}
+        
+                   
+      </pre>
+    </div>
+  </div>
+
+</body>
+
+</html>

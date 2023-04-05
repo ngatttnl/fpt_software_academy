@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gallery img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h2>Grid</h2>
+
+  <div class="gallery">
+    <img src="https://picsum.photos/300/300?random=1" alt="Image 1">
+    <img src="https://picsum.photos/300/300?random=2" alt="Image 2">
+    <img src="https://picsum.photos/300/300?random=3" alt="Image 3">
+    <img src="https://picsum.photos/300/300?random=4" alt="Image 4">
+    <img src="https://picsum.photos/300/300?random=5" alt="Image 5">
+    <img src="https://picsum.photos/300/300?random=6" alt="Image 6">
+    <img src="https://picsum.photos/300/300?random=7" alt="Image 7">
+    <img src="https://picsum.photos/300/300?random=8" alt="Image 8">
+    <img src="https://picsum.photos/300/300?random=9" alt="Image 9">
+  </div>
+
+
+
+
+  <h1>Code</h1>
+  <div class="row">
+    <div class="column1">
+      <textarea class="code">
+<div class="gallery">
+  <img src="https://picsum.photos/300/300?random=1" alt="Image 1">
+  <img src="https://picsum.photos/300/300?random=2" alt="Image 2">
+  <img src="https://picsum.photos/300/300?random=3" alt="Image 3">
+  <img src="https://picsum.photos/300/300?random=4" alt="Image 4">
+  <img src="https://picsum.photos/300/300?random=5" alt="Image 5">
+  <img src="https://picsum.photos/300/300?random=6" alt="Image 6">
+  <img src="https://picsum.photos/300/300?random=7" alt="Image 7">
+  <img src="https://picsum.photos/300/300?random=8" alt="Image 8">
+  <img src="https://picsum.photos/300/300?random=9" alt="Image 9">
+</div>
+            
+      </textarea>
+    </div>
+    <div class="column2">
+      <pre>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}                
+      </pre>
+    </div>
+  </div>
+
+</body>
+
+</html>

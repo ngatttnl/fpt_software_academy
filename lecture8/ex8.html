@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #event-info {
+            max-width: 800px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .event-image {
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .event-text {
+            width: 300px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Historical Event</h1>
+    <div id="event-info"></div>
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+<h1>Historical Event</h1>
+<div id="event-info"></div>
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#event-info {
+    max-width: 800px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event-image {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-text {
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: justify;
+}
+
+//add to script tag:
+const eventInfo = document.getElementById('event-info');
+
+const event = {
+    title: 'The Industrial Revolution',
+    images: [
+        'https://picsum.photos/300/200?random=1',
+        'https://picsum.photos/300/200?random=2',
+        'https://picsum.photos/300/200?random=3'
+    ],
+    text: 'The Industrial Revolution was a period of major industrialization that took place during the late 18th and early 19th centuries. The period saw a rapid growth in machinery, factories, and mass production, which greatly impacted the social, economic, and cultural conditions of the time. Some of the major inventions and innovations during this period include the steam engine, the spinning jenny, and the power loom. The Industrial Revolution is widely regarded as a turning point in human history and had a profound impact on the modern world.'
+};
+
+// Display event title
+const title = document.createElement('h2');
+title.innerText = event.title;
+eventInfo.appendChild(title);
+
+// Display event images
+event.images.forEach(image => {
+    const imageDiv = document.createElement('div');
+    imageDiv.classList.add('event-image');
+
+    const img = document.createElement('img');
+    img.src = image;
+    imageDiv.appendChild(img);
+
+    eventInfo.appendChild(imageDiv);
+});
+
+// Display event text
+const textDiv = document.createElement('div');
+textDiv.classList.add('event-text');
+
+const text = document.createElement('p');
+text.innerText = event.text;
+textDiv.appendChild(text);
+
+eventInfo.appendChild(textDiv);
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        const eventInfo = document.getElementById('event-info');
+
+        const event = {
+            title: 'The Industrial Revolution',
+            images: [
+                'https://picsum.photos/300/200?random=1',
+                'https://picsum.photos/300/200?random=2',
+                'https://picsum.photos/300/200?random=3'
+            ],
+            text: 'The Industrial Revolution was a period of major industrialization that took place during the late 18th and early 19th centuries. The period saw a rapid growth in machinery, factories, and mass production, which greatly impacted the social, economic, and cultural conditions of the time. Some of the major inventions and innovations during this period include the steam engine, the spinning jenny, and the power loom. The Industrial Revolution is widely regarded as a turning point in human history and had a profound impact on the modern world.'
+        };
+
+        // Display event title
+        const title = document.createElement('h2');
+        title.innerText = event.title;
+        eventInfo.appendChild(title);
+
+        // Display event images
+        event.images.forEach(image => {
+            const imageDiv = document.createElement('div');
+            imageDiv.classList.add('event-image');
+
+            const img = document.createElement('img');
+            img.src = image;
+            imageDiv.appendChild(img);
+
+            eventInfo.appendChild(imageDiv);
+        });
+
+        // Display event text
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('event-text');
+
+        const text = document.createElement('p');
+        text.innerText = event.text;
+        textDiv.appendChild(text);
+
+        eventInfo.appendChild(textDiv);
+
+    </script>
+</body>
+
+</html>

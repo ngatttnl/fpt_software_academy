@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .non {
+            border: 3px solid #4CAF50;
+            padding: 5px;
+        }
+
+        .clearfix {
+            border: 3px solid #4CAF50;
+            padding: 5px;
+        }
+
+        .img1 {
+            float: right;
+        }
+
+        .img2 {
+            float: right;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .parent {
+            float: right;
+            border: 1px solid black;
+            padding: 20px;
+            width: 350px;
+            height: 450px;
+        }
+
+        .child {
+            float: inherit;
+            border: 1px solid green;
+            width: 250px;
+            height: 200px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <h2>Without Clearfix</h2>
+
+    <p>This image is floated to the right. It is also taller than the element containing it, so it overflows outside of
+        its container:</p>
+
+    <div class="non">
+        <img class="img1" src="https://picsum.photos/200/200?random=1" alt="An image">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+    </div>
+
+    <h2 style="clear:right">With New Modern Clearfix</h2>
+    <p>Add the clearfix hack to the containing element, to fix this problem:</p>
+
+    <div class="clearfix">
+        <img class="img2" src="https://picsum.photos/200/200?random=2" alt="An image">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+    </div>
+
+    <!--<div class="parent">
+        <img class="img2" src="https://picsum.photos/200/200?random=3" alt="An image">
+        This image in parent div is floated to the right<br>
+        <div class="child">
+            <img class="img2" src="https://picsum.photos/200/200?random=4" alt="An image">
+        So this image in child div is also floated to the right
+        </div>
+    </div>-->
+<br><br>
+
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<h2>Without Clearfix</h2>
+
+<p>This image is floated to the right. It is also taller than the element containing it, so it overflows outside of
+    its container:</p>
+
+<div class="non">
+    <img class="img1" src="https://picsum.photos/200/200?random=1" alt="An image">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+</div>
+
+<h2 style="clear:right">With New Modern Clearfix</h2>
+<p>Add the clearfix hack to the containing element, to fix this problem:</p>
+
+<div class="clearfix">
+    <img class="img2" src="https://picsum.photos/200/200?random=2" alt="An image">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+</div>
+                  
+
+      </textarea>
+        </div>
+        <div class="column1">
+            <pre>
+.non {
+    border: 3px solid #4CAF50;
+    padding: 5px;
+}
+
+.clearfix {
+    border: 3px solid #4CAF50;
+    padding: 5px;
+}
+
+.img1 {
+    float: right;
+}
+
+.img2 {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+      </pre>
+        </div>
+    </div>
+    <script>
+        function changeIframe(url) {
+            document.getElementById("iframe").src = url;
+        }
+
+
+    </script>
+</body>
+
+</html>

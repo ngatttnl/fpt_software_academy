@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        #playlist {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 80vh;
+            background-color: #222;
+            color: #fff;
+            margin: 0 auto;
+        }
+
+        #tracklist {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .track {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #444;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .track:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .track.active {
+            background-color: #ff3366;
+        }
+
+        .track .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .track .artist {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .track .duration {
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="playlist">
+        <audio id="player" controls>
+            <source src="mp3/chuyen16.mp3" type="audio/mpeg">
+            
+        </audio>
+        <ul id="tracklist">
+            <li class="track active">
+                <span class="title">Story 1</span>
+                <span class="artist">Artist 1</span>
+                <span class="duration">3:30</span>
+                <audio src="mp3/chuyen16.mp3"></audio>
+            </li>
+            <li class="track">
+                <span class="title">Story 2</span>
+                <span class="artist">Artist 2</span>
+                <span class="duration">4:15</span>
+                <audio src="mp3/chuyen43.mp3"></audio>
+            </li>
+            <li class="track">
+                <span class="title">Story 3</span>
+                <span class="artist">Artist 3</span>
+                <span class="duration">2:50</span>
+                <audio src="mp3/chuyen70.mp3"></audio>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+#playlist {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+background-color: #222;
+color: #fff;
+}
+
+#tracklist {
+list-style: none;
+margin: 0;
+padding: 0;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-gap: 20px;
+}
+
+.track {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+background-color: #444;
+padding: 20px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.track:hover {
+transform: translateY(-10px);
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.track.active {
+background-color: #ff3366;
+}
+
+.track .title {
+font-size: 1.5rem;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.track .artist {
+font-size: 1rem;
+margin-bottom: 5px;
+}
+
+.track .duration {
+font-size: 0.8rem;
+color: #ccc;
+}
+
+audio {
+display: none;
+}
+                  
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        const tracklist = document.getElementById("tracklist");
+        const tracks = document.querySelectorAll(".track");
+        const player = document.getElementById("player");
+        const trackInfo = document.querySelector(".track-info");
+       
+
+        let currentTrack = 0;
+
+        function playTrack(index) {
+            tracks[currentTrack].classList.remove("active");
+            currentTrack = index;
+            tracks[currentTrack].classList.add("active");
+            const track = tracks[currentTrack].querySelector("audio");
+            player.src = track.src;
+            player.load();
+            player.play();
+        }
+
+        tracks.forEach((track, index) => {
+            track.addEventListener("click", () => {
+                playTrack(index);
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

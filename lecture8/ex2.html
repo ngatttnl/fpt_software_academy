@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        .calculator {
+            width: 240px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .display {
+            width: 100%;
+            height: 50px;
+            font-size: 36px;
+            text-align: right;
+            border: none;
+            background-color: #f5f5f5;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+            margin-top: 5px;
+        }
+
+        .button {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            border: none;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .button:active {
+            background-color: #c0c0c0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button class="button" onclick="addToDisplay('7')">7</button>
+            <button class="button" onclick="addToDisplay('8')">8</button>
+            <button class="button" onclick="addToDisplay('9')">9</button>
+            <button class="button" onclick="addToDisplay('/')">/</button>
+            <button class="button" onclick="addToDisplay('4')">4</button>
+            <button class="button" onclick="addToDisplay('5')">5</button>
+            <button class="button" onclick="addToDisplay('6')">6</button>
+            <button class="button" onclick="addToDisplay('*')">*</button>
+            <button class="button" onclick="addToDisplay('1')">1</button>
+            <button class="button" onclick="addToDisplay('2')">2</button>
+            <button class="button" onclick="addToDisplay('3')">3</button>
+            <button class="button" onclick="addToDisplay('-')">-</button>
+            <button class="button" onclick="addToDisplay('0')">0</button>
+            <button class="button" onclick="addToDisplay('.')">.</button>
+            <button class="button" onclick="calculate()">=</button>
+            <button class="button" onclick="addToDisplay('+')">+</button>
+            <button class="button" onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+<div class="calculator">
+    <input type="text" class="display" id="display" disabled>
+    <div class="buttons">
+        <button class="button" onclick="addToDisplay('7')">7</button>
+        <button class="button" onclick="addToDisplay('8')">8</button>
+        <button class="button" onclick="addToDisplay('9')">9</button>
+        <button class="button" onclick="addToDisplay('/')">/</button>
+        <button class="button" onclick="addToDisplay('4')">4</button>
+        <button class="button" onclick="addToDisplay('5')">5</button>
+        <button class="button" onclick="addToDisplay('6')">6</button>
+        <button class="button" onclick="addToDisplay('*')">*</button>
+        <button class="button" onclick="addToDisplay('1')">1</button>
+        <button class="button" onclick="addToDisplay('2')">2</button>
+        <button class="button" onclick="addToDisplay('3')">3</button>
+        <button class="button" onclick="addToDisplay('-')">-</button>
+        <button class="button" onclick="addToDisplay('0')">0</button>
+        <button class="button" onclick="addToDisplay('.')">.</button>
+        <button class="button" onclick="calculate()">=</button>
+        <button class="button" onclick="addToDisplay('+')">+</button>
+        <button class="button" onclick="clearDisplay()">C</button>
+    </div>
+    </div>
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+.code-window-container {
+    display: flex;
+}
+
+.code-window {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: 10px;
+    display: inline-block;
+}
+
+.code-header {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.copy-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.code-area {
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    border: none;
+    font-family: monospace;
+    font-size: 14px;
+    resize: none;
+}
+
+/* Styles for screens smaller than 768px */
+@media (max-width: 767px) {
+    .code-window-container {
+        flex-direction: column;
+    }
+
+    .code-window {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .code-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .code-header h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .copy-button {
+        margin-top: 5px;
+    }
+
+    .code-area {
+        height: 200px;
+        font-size: 12px;
+    }
+}
+
+//Javascript here, put it in script tag
+function html_onclick() {
+    // Get the HTML Copy button and add a click event listener
+
+    // Get the text area that contains the HTML code
+    var htmlCode = document.querySelector(".code-window:nth-of-type(1) .code-area");
+
+    // Select the text inside the text area
+    htmlCode.select();
+
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+
+    // Deselect the text
+    window.getSelection().removeAllRanges();
+
+    // Alert the user that the code has been copied
+    alert("HTML code has been copied to clipboard!");
+
+}
+function css_onclick() {
+    alert("come here");
+    // Get the text area that contains the CSS code
+    var cssCode = document.querySelector(".code-window:nth-of-type(2) .code-area");
+
+    // Select the text inside the text area
+    cssCode.select();
+
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+
+    // Deselect the text
+    window.getSelection().removeAllRanges();
+
+    // Alert the user that the code has been copied
+    alert("CSS code has been copied to clipboard!");
+}
+            </textarea>
+        </div>
+
+    </div>
+    <div>
+        <a href="form4.html" download>Click here to download code</a>
+        <p>If the download doesn't start automatically, please right-click the link and choose "Save As".</p>
+    </div>
+
+    <script>
+        let display = document.getElementById("display");
+
+        function addToDisplay(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function calculate() {
+            try {
+                let result = eval(display.value);
+                display.value = result;
+            } catch (e) {
+                display.value = "Error";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

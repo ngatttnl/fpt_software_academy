@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      height: 100px;
+      background-color: #0080ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-areas:
+        "img1 img2 img3"
+        "img4 img5 img6"
+        "img7 img8 img9";
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 10px;
+      height: 200px;
+    }
+
+    .item img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .content {
+        grid-template-areas:
+          "img1 img1 img2"
+          "img3 img3 img2"
+          "img4 img5 img6"
+          "img7 img8 img9";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  </style>
+  <script>
+
+  </script>
+</head>
+
+<body>
+
+  <header>My Website</header>
+    <div class="content">
+      <div class="item" style="grid-area: img1;">
+        <img src="https://picsum.photos/200/250?random=1" alt="Image 1">
+      </div>
+      <div class="item" style="grid-area: img2;">
+        <img src="https://picsum.photos/300/200?random=2" alt="Image 2">
+      </div>
+      <div class="item" style="grid-area: img3;">
+        <img src="https://picsum.photos/200/300?random=3" alt="Image 3">
+      </div>
+      <div class="item" style="grid-area: img4;">
+        <img src="https://picsum.photos/250/200?random=4" alt="Image 4">
+      </div>
+      <div class="item" style="grid-area: img5;">
+        <img src="https://picsum.photos/200/200?random=5" alt="Image 5">
+      </div>
+      <div class="item" style="grid-area: img6;">
+        <img src="https://picsum.photos/300/300?random=6" alt="Image 6">
+      </div>
+      <div class="item" style="grid-area: img7;">
+        <img src="https://picsum.photos/250/300?random=7" alt="Image 7">
+      </div>
+      <div class="item" style="grid-area: img8;">
+        <img src="https://picsum.photos/200/250?random=8" alt="Image 8">
+      </div>
+      <div class="item" style="grid-area: img9;">
+        <img src="https://picsum.photos/300/200?random=9" alt="Image 9">
+      </div>
+    </div>
+
+
+
+  <h1>Code</h1>
+  <div class="row">
+    <div class="column1">
+      <textarea class="code">
+<header>My Website</header>
+<div class="content">
+  <div class="item" style="grid-area: img1;">
+    <img src="https://picsum.photos/200/250?random=1" alt="Image 1">
+  </div>
+  <div class="item" style="grid-area: img2;">
+    <img src="https://picsum.photos/300/200?random=2" alt="Image 2">
+  </div>
+  <div class="item" style="grid-area: img3;">
+    <img src="https://picsum.photos/200/300?random=3" alt="Image 3">
+  </div>
+  <div class="item" style="grid-area: img4;">
+    <img src="https://picsum.photos/250/200?random=4" alt="Image 4">
+  </div>
+  <div class="item" style="grid-area: img5;">
+    <img src="https://picsum.photos/200/200?random=5" alt="Image 5">
+  </div>
+  <div class="item" style="grid-area: img6;">
+    <img src="https://picsum.photos/300/300?random=6" alt="Image 6">
+  </div>
+  <div class="item" style="grid-area: img7;">
+    <img src="https://picsum.photos/250/300?random=7" alt="Image 7">
+  </div>
+  <div class="item" style="grid-area: img8;">
+    <img src="https://picsum.photos/200/250?random=8" alt="Image 8">
+  </div>
+  <div class="item" style="grid-area: img9;">
+    <img src="https://picsum.photos/300/200?random=9" alt="Image 9">
+  </div>
+</div>
+        
+            
+      </textarea>
+    </div>
+    <div class="column2">
+      <pre>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  height: 100px;
+  background-color: #0080ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.content {
+  display: grid;
+  grid-template-areas:
+    "img1 img2 img3"
+    "img4 img5 img6"
+    "img7 img8 img9";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    grid-template-areas:
+      "img1 img1 img2"
+      "img3 img3 img2"
+      "img4 img5 img6"
+      "img7 img8 img9";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+  }
+}     
+                   
+      </pre>
+    </div>
+  </div>
+
+</body>
+
+</html>

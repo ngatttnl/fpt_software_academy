@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Flexbox</h2>
+    <p>Flexbox là một công nghệ trong CSS, giúp cho việc thiết kế giao diện web trở nên linh hoạt và dễ dàng hơn. Nó cho
+        phép bạn xác định các item trong container của bạn sẽ được sắp xếp như thế nào, độ rộng của chúng, khoảng cách
+        giữa chúng, cách thức chúng tự động điều chỉnh kích thước theo container, và nhiều tính năng khác nữa.</p>
+    <p>
+        Một số điều cần nhớ:
+    <ol>
+        <li> Flexbox sử dụng một container để bao bọc các item. Các thuộc tính Flexbox được áp dụng cho container.
+            Các item được xếp theo hướng ngang hoặc dọc trong container sử dụng thuộc tính flex-direction.
+            <pre>
+        .container {
+          display: flex;
+          flex-direction: row; /* hoặc column */
+        }</pre>
+        </li>
+        <li>Các item có thể căn chỉnh theo hướng chính giữa hoặc hướng phụ bằng thuộc tính justify-content và
+            align-items.
+            <pre>.container {
+          display: flex;
+          justify-content: center; /* căn giữa theo chiều ngang */
+          align-items: center; /* căn giữa theo chiều dọc */
+        }</pre>
+        </li>
+        <li>
+            Các item có thể đổi vị trí với nhau bằng thuộc tính order.
+            <pre>
+        .item {
+          order: 2; /* item này sẽ được đưa lên sau item có order là 1 */
+        }</pre>
+        </li>
+        <li>Các item có thể được co hoặc giãn ra bằng thuộc tính flex-grow và flex-shrink.
+            <pre>
+        .item {
+          flex-grow: 1; /* item sẽ giãn ra để đầy không gian còn trống trong container */
+          flex-shrink: 0; /* item sẽ không bị co lại khi không đủ không gian */
+        }</pre>
+        </li>
+        <li>Các item có thể được sắp xếp theo thứ tự ưu tiên bằng thuộc tính flex-basis.
+            <pre>
+        .item {
+          flex-basis: 50%; /* item sẽ được cấp đủ không gian 50% trong container */
+        }</pre>
+        </li>
+    </ol>
+    </p>
+
+    
+
+
+
+</body>
+
+</html>

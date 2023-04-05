@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Task Manager</h1>
+    <nav>
+      <ul>
+        <li><a href="#tasks">Tasks</a></li>
+        <li><a href="#" id="add-task">Add New Task</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tasks">
+      <h2>All Tasks</h2>
+      <input type="text" id="search-input" placeholder="Search...">
+      <button id="search-button">Search</button>
+      <ul id="task-list">
+        <!-- Task items will be added here -->
+      </ul>
+    </section>
+
+    <div id="add-task-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="add-form">
+          <label for="add-task-name">Task Name:</label>
+          <input type="text" id="add-task-name" required>
+          <label for="add-task-date">Due Date:</label>
+          <input type="date" id="add-task-date" required>
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script >
+    const tasks = [];
+
+const taskList = document.getElementById('task-list');
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const addTaskButton = document.getElementById('add-task');
+const addTaskModal = document.getElementById('add-task-modal');
+const addTaskForm = document.getElementById('add-form');
+
+// Event listener for Add New Task button
+addTaskButton.addEventListener('click', function() {
+  addTaskModal.style.display = 'block';
+});
+
+// Event listener for close button in modal dialog
+document.getElementsByClassName('close')[0].addEventListener('click', function() {
+  addTaskModal.style.display = 'none';
+});
+
+// Event listener for Add Task form submission
+addTaskForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const taskName = document.getElementById('add-task-name').value;
+  const dueDate = document.getElementById('add-task-date').value;
+
+  const task = {
+    id: tasks.length + 1,
+    name: taskName,
+    dueDate: dueDate,
+    completed: false
+  };
+
+  tasks.push(task);
+
+  addTaskModal.style.display = 'none';
+  addTaskForm.reset();
+});
+
+// Render tasks on page load
+renderTasks(tasks);
+
+// Function to render tasks
+function renderTasks(tasks) {
+  taskList.innerHTML = '';
+
+  tasks.forEach(function(task) {
+    const listItem = document.createElement('li');
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = task.completed;
+    checkbox.addEventListener('change', function() {
+      task.completed = this.checked;
+    });
+
+    const name = document.createElement('span');
+    name.textContent = task.name;
+
+    const dueDate = document.createElement('span');
+    dueDate.textContent = task.dueDate;
+
+    listItem.appendChild(checkbox);
+    listItem.appendChild(name);
+    listItem.appendChild(dueDate);
+
+    taskList.appendChild(listItem);
+  });
+}
+
+  </script>
+</body>
+</html>

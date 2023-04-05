@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanh Nga - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <style>
+        /* Style for row 1 */
+        .row-1 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .box {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            width: 30%;
+            text-align: center;
+        }
+
+        .box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Style for row 2 */
+        .row-2 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            width: 30%;
+            text-align: center;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            width: 80px;
+            height: 80px;
+        }
+
+        .testimonial h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
+
+        #js {
+            background-color: #d3d3d3;
+        }
+
+        #css {
+            background-color: #b8dbe1;
+        }
+
+        #html {
+            background-color: #f0e3cc;
+        }
+
+        /* Style the dropdown button */
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style the dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the dropdown content when the dropdown button is hovered over */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style the links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change the background color of the dropdown links when hovered over */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Add a border to the dropdown button when it's clicked on */
+        .dropbtn:focus {
+            border: 1px solid blue;
+        }
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = "test/" + item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <main>
+
+        <section class="row-1">
+            <div class="box" id="html">
+                <h2>HTML</h2>
+                <p>HTML is the markup language used to structure content on the web. It provides a set of tags that
+                    allow
+                    you to define headings, paragraphs, lists, links, and other types of content. Learning HTML is a
+                    great
+                    starting point for anyone interested in web development.
+                    <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML at w3schools</a>
+                </p>
+            </div>
+            <div class="box" id="css">
+                <h2>CSS</h2>
+                <p>CSS is the language used to style HTML content on the web. With CSS, you can set colors, fonts,
+                    layouts,
+                    and other visual aspects of your website. Learning CSS will enable you to create beautiful,
+                    responsive
+                    designs that look great on any device.
+                    <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS at w3schools</a>
+                </p>
+            </div>
+            <div class="box" id="js">
+                <h2>JavaScript</h2>
+                <p>JavaScript is the programming language used to add interactivity and dynamic behavior to web
+                    pages.
+                    With
+                    JavaScript, you can create animations, handle user input, and communicate with external APIs.
+                    Learning
+                    JavaScript will give you the skills to create powerful, interactive web applications.
+                    <a href="https://www.w3schools.com/js/default.asp" target="_blank">JavaScript at w3schools</a>
+                </p>
+            </div>
+        </section>
+
+        <section class="row-2">
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/150" alt="testimonial image">
+                <h3>John Doe</h3>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac odio eget ex eleifend faucibus."
+                </p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/150" alt="testimonial image">
+                <h3>Jane Doe</h3>
+                <p>"Duis euismod faucibus ipsum, quis pulvinar sapien luctus ac. Sed fermentum rhoncus risus, vel
+                    eleifend augue hendrerit eget."</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/150" alt="testimonial image">
+                <h3>Bob Smith</h3>
+                <p>"Maecenas at euismod nisl. Praesent tristique eros sed dolor venenatis, eget gravida velit lacinia."
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

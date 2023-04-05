@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Set the height of the container */
+        }
+
+        .slideshow-image {
+            text-align: center;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade {
+            opacity: 1;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <div class="slideshow-image fade">
+            <img src="https://picsum.photos/400/400?random=1" alt="Slideshow Image">
+        </div>
+    </div>
+
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+<div class="slideshow-container">
+    <div class="slideshow-image fade">
+        <img src="https://picsum.photos/400/400?random=1" alt="Slideshow Image">
+    </div>
+</div>
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Set the height of the container */
+}
+.slideshow-image {
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.fade {
+    opacity: 1;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+//put in script tag       
+let slideshowImages = document.querySelectorAll('.slideshow-image');
+let currentImageIndex = 0;
+
+function initSlideshow() {
+    setInterval(() => {
+        slideshowImages[currentImageIndex].classList.remove('fade');
+        currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+        slideshowImages[currentImageIndex].querySelector('img').src = `https://picsum.photos/400/400?random=${Math.floor(Math.random() * 100)}`;
+        slideshowImages[currentImageIndex].classList.add('fade');
+    }, 3000);
+}
+
+window.onload = function () {
+    initSlideshow();
+};          
+            </textarea>
+        </div>
+    </div>
+
+    <script>
+        let slideshowImages = document.querySelectorAll('.slideshow-image');
+        let currentImageIndex = 0;
+
+        function initSlideshow() {
+            setInterval(() => {
+                slideshowImages[currentImageIndex].classList.remove('fade');
+                currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+                slideshowImages[currentImageIndex].querySelector('img').src = `https://picsum.photos/400/400?random=${Math.floor(Math.random() * 100)}`;
+                slideshowImages[currentImageIndex].classList.add('fade');
+            }, 3000);
+        }
+
+        window.onload = function () {
+            initSlideshow();
+        };
+
+
+    </script>
+</body>
+
+</html>

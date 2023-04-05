@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  background-image: url(img/hero.jpg);
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+
+/* Projects section */
+.projects {
+  padding: 50px 20px;
+}
+
+.projects h3 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.project img {
+  max-width: 40%;
+}
+
+.project-info {
+  max-width: 50%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.project-info h4 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.project-info p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.project-info a {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.project-info a:hover {
+  background-color: #333;
+}
+
+/* About section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 50px 20px;
+}
+
+.about h3 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.about img {
+  max-width: 50%;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.about p {
+  font-size: 16px;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Desktop and laptop styles */
+@media screen and (min-width: 1024px) {
+  .hero h2 {
+    font-size: 64px;
+  }
+  
+  .hero p {
+    font-size: 32px;
+  }
+  
+  .projects {
+    padding: 100px 20px;
+  }
+  
+  .projects h3 {
+    font-size: 48px;
+  }
+  
+  .project {
+    flex-direction: row;
+  }
+  
+  .project img {
+    max-width: 50%;
+  }
+  
+  .project-info {
+    max-width: 40%;
+  }
+  
+  .about {
+    padding: 100px 20px;
+  }
+  
+  .about h3 {
+    font-size: 48px;
+  }
+  
+  .about img {
+    max-width: 40%;
+    margin-bottom: 0;
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+  }
+  
+  .projects {
+    padding: 75px 20px;
+  }
+  
+  .projects h3 {
+    font-size: 36px;
+  }
+  
+  .project img {
+    max-width: 60%;
+  }
+  
+  .project-info {
+    max-width: 35%;
+  }
+  
+  .about {
+    padding: 75px 20px;
+  }
+  
+  .about h3 {
+    font-size: 36px;
+  }
+  
+  .about img {
+    max-width: 60%;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+  .hero h2 {
+    font-size: 24px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+  }
+  
+  .projects {
+    padding: 50px 20px;
+  }
+  
+  .projects h3 {
+    font-size: 24px;
+  }
+  
+  .project {
+    flex-direction: column;
+  }
+  
+  .project img {
+    max-width: 100%;
+  }
+  
+  .project-info {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  
+  .about {
+    padding: 50px 20px;
+  }
+  
+  .about h3 {
+    font-size: 24px;
+  }
+  
+  .about img {
+    max-width: 70%;
+  }
+}
+
+    </style>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+    <section class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Here you'll find a selection of my best work in web design and development. Browse through my projects and feel free to get in touch if you have any questions.</p>
+    </section>
+
+    <section class="projects">
+        <h3>Featured Projects</h3>
+        <div class="project">
+        <img src="https://picsum.photos/200/200?random=1" alt="Project 1">
+        <div class="project-info">
+            <h4>Project 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt.</p>
+            <a href="#">View Project</a>
+        </div>
+        </div>
+        <div class="project">
+        <img src="https://picsum.photos/200/200?random=2" alt="Project 2">
+        <div class="project-info">
+            <h4>Project 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt.</p>
+            <a href="#">View Project</a>
+        </div>
+        </div>
+        <div class="project">
+        <img src="https://picsum.photos/200/200?random=3" alt="Project 3">
+        <div class="project-info">
+            <h4>Project 3</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt.</p>
+            <a href="#">View Project</a>
+        </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h3>About Me</h3>
+        <img src="https://picsum.photos/200/200?random=6" alt="Profile Picture">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt. Morbi auctor vestibulum lectus eu vehicula.</p>
+    </section>
+    </main>
+
+    <footer>
+    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    </footer> 
+
+    
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+    <section class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Here you'll find a selection of my best work in web design and development. Browse through my projects and feel free to get in touch if you have any questions.</p>
+    </section>
+
+    <section class="projects">
+        <h3>Featured Projects</h3>
+        <div class="project">
+        <img src="https://picsum.photos/200/200?random=1" alt="Project 1">
+        <div class="project-info">
+            <h4>Project 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt.</p>
+            <a href="#">View Project</a>
+        </div>
+        </div>
+        <div class="project">
+        <img src="https://picsum.photos/200/200?random=2" alt="Project 2">
+        <div class="project-info">
+            <h4>Project 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt.</p>
+            <a href="#">View Project</a>
+        </div>
+        </div>
+        <div class="project">
+        <img src="https://picsum.photos/200/200?random=3" alt="Project 3">
+        <div class="project-info">
+            <h4>Project 3</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt.</p>
+            <a href="#">View Project</a>
+        </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h3>About Me</h3>
+        <img src="https://picsum.photos/200/200?random=6" alt="Profile Picture">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo at libero euismod tempus. Praesent molestie mi vel elit bibendum, eu luctus nisl tincidunt. Morbi auctor vestibulum lectus eu vehicula.</p>
+    </section>
+    </main>
+
+    <footer>
+    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    </footer>           
+
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+/* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    background-image: url(img/hero.jpg);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+/* Projects section */
+.projects {
+    padding: 50px 20px;
+}
+
+.projects h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.project img {
+    max-width: 40%;
+}
+
+.project-info {
+    max-width: 50%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.project-info h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.project-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.project-info a {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-info a:hover {
+    background-color: #333;
+}
+
+/* About section */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+}
+
+.about h3 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.about img {
+    max-width: 50%;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+
+.about p {
+    font-size: 16px;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Desktop and laptop styles */
+@media screen and (min-width: 1024px) {
+  .hero h2 {
+    font-size: 64px;
+  }
+  
+  .hero p {
+    font-size: 32px;
+  }
+  
+  .projects {
+    padding: 100px 20px;
+  }
+  
+  .projects h3 {
+    font-size: 48px;
+  }
+  
+  .project {
+    flex-direction: row;
+  }
+  
+  .project img {
+    max-width: 50%;
+  }
+  
+  .project-info {
+    max-width: 40%;
+  }
+  
+  .about {
+    padding: 100px 20px;
+  }
+  
+  .about h3 {
+    font-size: 48px;
+  }
+  
+  .about img {
+    max-width: 40%;
+    margin-bottom: 0;
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+  }
+  
+  .projects {
+    padding: 75px 20px;
+  }
+  
+  .projects h3 {
+    font-size: 36px;
+  }
+  
+  .project img {
+    max-width: 60%;
+  }
+  
+  .project-info {
+    max-width: 35%;
+  }
+  
+  .about {
+    padding: 75px 20px;
+  }
+  
+  .about h3 {
+    font-size: 36px;
+  }
+  
+  .about img {
+    max-width: 60%;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+  .hero h2 {
+    font-size: 24px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+  }
+  
+  .projects {
+    padding: 50px 20px;
+  }
+  
+  .projects h3 {
+    font-size: 24px;
+  }
+  
+  .project {
+    flex-direction: column;
+  }
+  
+  .project img {
+    max-width: 100%;
+  }
+  
+  .project-info {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  
+  .about {
+    padding: 50px 20px;
+  }
+  
+  .about h3 {
+    font-size: 24px;
+  }
+  
+  .about img {
+    max-width: 70%;
+  }
+}
+
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

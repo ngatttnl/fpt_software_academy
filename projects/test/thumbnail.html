@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Flex Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        img {
+			border-radius: 10px;
+		}
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Thumbnail gallery</h1>
+
+    <div class="gallery">
+        <a href="https://picsum.photos/300/300?random=1">
+            <img src="https://picsum.photos/100?random=1" alt="Image 1">
+        </a>
+        <a href="https://picsum.photos/300/300?random=2">
+            <img src="https://picsum.photos/100?random=2" alt="Image 2">
+        </a>
+        <a href="https://picsum.photos/300/300?random=3">
+            <img src="https://picsum.photos/100?random=3" alt="Image 3">
+        </a>
+    </div>
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<div class="gallery">
+    <a href="https://picsum.photos/300/300?random=1">
+        <img src="https://picsum.photos/100?random=1" alt="Image 1">
+    </a>
+    <a href="https://picsum.photos/300/300?random=2">
+        <img src="https://picsum.photos/100?random=2" alt="Image 2">
+    </a>
+    <a href="https://picsum.photos/300/300?random=3">
+        <img src="https://picsum.photos/100?random=3" alt="Image 3">
+    </a>
+</div>
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+img {
+    border-radius: 10px; /*rounded corner*/
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+}
+          
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

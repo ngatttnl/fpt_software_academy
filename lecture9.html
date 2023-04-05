@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanh Nga - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <style>
+
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = "lecture7/" + item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a class="logo" href="index.html">Thanh Nga</a>
+        <div class="topnav-right">
+          <a href="index.html">Home</a>
+          <a class="active" href="lecture1.html">Lecture 1</a>
+          <a href="lecture2.html">Lecture 2</a>
+          <a href="lecture3.html">Lecture 3</a>
+          <a href="lecture4.html">Lecture 4</a>
+          <a href="lecture5.html">Lecture 5</a>
+          <a href="lecture6.html">Lecture 6</a>
+          <a href="lecture7.html">Lecture 7</a>
+          <a href="lecture8.html">Lecture 8</a>
+          <a href="lecture9.html" class="active">Lecture 9</a>
+          <a class="call_to_action" href="tel: +0912345678">Call me</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+      </div>
+      
+    <hr><br>
+    <div class="container">
+        <div class="frame">
+            <iframe id="myframe" src="lecture7/lecture.html"></iframe>
+
+        </div>
+        <div class="mnradio">
+            <h2>Một số thứ cần nhớ:</h2>
+            <input type="radio" id="lecture" checked name="fav_language" onclick="return radio_onclick('lecture')">
+            <label for="lecture">Table and Form (updating)</label><br>
+            
+            <h2>Danh sách các ví dụ:</h2>
+
+            <input type="radio" id="form1" name="fav_language" onclick="return radio_onclick('form1')">
+            <label for="form1">Example 1</label><br>
+            <input type="radio" id="form2" name="fav_language" onclick="return radio_onclick('form2')">
+            <label for="form2">Example 2</label><br>
+
+            <input type="radio" id="form3" name="fav_language" onclick="return radio_onclick('form3')">
+            <label for="form3">Example 3</label><br>
+
+            <input type="radio" id="form4" name="fav_language" onclick="return radio_onclick('form4')">
+            <label for="form4">Example 4</label><br>
+
+            
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

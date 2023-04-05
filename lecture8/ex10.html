@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        #video-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgb(106, 232, 94);
+        }
+
+
+        #overlay h1 {
+            font-size: 3em;
+        }
+
+        #overlay p {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        #overlay button {
+            background-color: #0fe324;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #overlay button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <video controls id="video-bg">
+        <source src="mp3/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="overlay">
+        <h1>Welcome to our landing page</h1>
+        <p>Find out more about our products and services</p>
+        <button>Learn More</button>
+    </div>
+
+
+
+
+    <script>
+        // Play video automatically when page loads
+        window.onload = function () {
+            const video = document.getElementById('video-bg');
+            video.play();
+        };
+
+        // Show overlay text after 3 seconds
+        setTimeout(function () {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'block';
+
+            setInterval(function () {
+                if (overlay.style.display === 'block') {
+                    overlay.style.display = 'none';
+                } else {
+                    overlay.style.display = 'block';
+                }
+            }, 3000);
+        }, 3000);
+
+
+    </script>
+</body>
+
+</html>

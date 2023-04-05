@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanh Nga - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = "lecture5/" + item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="logo" href="index.html">Thanh Nga</a>
+    
+
+        <div class="topnav-right">
+            <a href="index.html">Home</a>
+            <a href="lecture1.html">Lecture 1</a>
+            <a href="lecture2.html">Lecture 2</a>
+            <a href="lecture3.html">Lecture 3</a>
+            <a href="lecture4.html">Lecture 4</a>
+            <a href="lecture5.html" class="active" >Lecture 5</a>
+            <a href="lecture6.html">Lecture 6</a>
+            <a href="lecture7.html">Lecture 7</a>
+            <a href="lecture8.html">Lecture 8</a>
+            <a href="lecture9.html">Lecture 9</a>
+            <a class="call_to_action" href="tel: +0912345678">Call me</a>
+        </div>
+    </div>
+
+    <hr><br>
+    <div class="container">
+        <div class="frame">
+            <iframe id="myframe" src="lecture5/lecture.html"></iframe>
+
+        </div>
+        <div class="mnradio">
+            <h2>Một số thứ cần nhớ:</h2>
+            <input type="radio" id="lecture" checked name="fav_language" onclick="return radio_onclick('lecture')">
+            <label for="lecture">Những kiến thức cơ bản</label><br>
+
+            <h2>Danh sách các ví dụ:</h2>
+
+            
+
+            
+
+            <input type="radio" id="product" name="fav_language" onclick="return radio_onclick('product')">
+            <label for="product">Product</label><br>
+            
+            <input type="radio" id="pricing_table" name="fav_language" onclick="return radio_onclick('pricing_table')">
+            <label for="pricing_table">Pricing Table</label><br>
+
+            <input type="radio" id="portfolio" name="fav_language" onclick="return radio_onclick('portfolio')">
+            <label for="portfolio">Portfolio</label><br>
+
+            <input type="radio" id="background" name="fav_language" onclick="return radio_onclick('background')">
+            <label for="background">Background</label><br>
+
+            <input type="radio" id="float" name="fav_language" onclick="return radio_onclick('float')">
+            <label for="float">Float Image</label><br>
+
+            <input type="radio" id="clearfix" name="fav_language" onclick="return radio_onclick('clearfix')">
+            <label for="clearfix">Clearfix</label><br>
+            
+            <input type="radio" id="selection" name="fav_language" onclick="return radio_onclick('selection')">
+            <label for="selection">Selection</label><br>
+
+            <input type="radio" id="gradient" name="fav_language" onclick="return radio_onclick('gradient')">
+            <label for="gradient">Gradient</label><br>
+            <!--
+                <input type="radio" id="table" name="fav_language" onclick="return radio_onclick('table')">
+            <label for="table">Table</label><br>
+
+            <input type="radio" id="web2columns" name="fav_language" onclick="return radio_onclick('web2columns')">
+            <label for="web2columns">Web 2 columns</label><br>
+
+            <input type="radio" id="gallery" name="fav_language" onclick="return radio_onclick('gallery')">
+            <label for="gallery">Gallery</label><br>
+
+          -->
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+/* CSS cho trang web về các dự án /
+    /* Thiết lập phần header */
+h1 {
+    text-align: center;
+}
+
+/* Thiết lập phần các dự án */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.project:hover {
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.project-image {
+    margin: 10px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-image img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.project-title {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Thiết lập phần chi tiết dự án */
+.project-details {
+    display: none;
+    margin-top: 50px;
+}
+
+.project-details h2 {
+    text-align: center;
+}
+
+.project-details p {
+    text-align: justify;
+    margin: 10px;
+}
+
+.back-btn {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #000;
+}
+
+.back-btn:hover {
+    background-color: orange;
+    color: #fff;
+}

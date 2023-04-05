@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Edit Task</h1>
+    </header>
+    <main>
+      <form id="edit-form">
+        <div class="form-control">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-control">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+        <div class="form-control">
+          <label for="due-date">Due Date:</label>
+          <input type="date" id="due-date" name="due-date">
+        </div>
+        <div class="form-control">
+          <label for="priority">Priority:</label>
+          <select id="priority" name="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit">Save Changes</button>
+          <a href="index.html">Cancel</a>
+        </div>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

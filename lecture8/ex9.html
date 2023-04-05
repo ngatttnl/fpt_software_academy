@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        #product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        #product-table th,
+        #product-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        #product-table th {
+            background-color: #f2f2f2;
+        }
+
+        #product-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #product-table tbody tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <br>
+    <hr>
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        let products = [
+            { name: "Dell Inspiron", price: 799, description: "15.6-inch Full HD Laptop" },
+            { name: "HP Pavilion", price: 649, description: "14-inch Full HD Laptop" },
+            { name: "Apple MacBook Pro", price: 1299, description: "13-inch Retina Display Laptop" },
+        ];
+
+        let productTable = document.getElementById("product-table");
+
+        products.forEach(function (product) {
+            let row = document.createElement("tr");
+
+            let nameCell = document.createElement("td");
+            nameCell.innerText = product.name;
+            row.appendChild(nameCell);
+
+            let priceCell = document.createElement("td");
+            priceCell.innerText = product.price;
+            row.appendChild(priceCell);
+
+            let descCell = document.createElement("td");
+            descCell.innerText = product.description;
+            row.appendChild(descCell);
+
+            productTable.querySelector("tbody").appendChild(row);
+        });
+
+    </script>
+</body>
+
+</html>

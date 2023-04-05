@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .code-area {
+      width: 400px;
+      height: 100px;
+      padding: 10px;
+      border: none;
+
+    }
+    video{
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Audio</h2>
+  <p>
+  <h3> Phát nhạc trực tuyến:</h3>
+
+  <audio controls>
+    <source src="mp3/chuyen16.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <textarea class="code-area">
+    <audio controls>
+      <source src="mp3/chuyen16.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </textarea>
+  <br>Trong ví dụ này, chúng ta sử dụng thuộc tính controls để hiển thị thanh điều khiển bên dưới. Nếu trình duyệt không
+  hỗ trợ định dạng audio, văn bản "Your browser does not support the audio element." sẽ được hiển thị.
+
+  <h3> Chạy một đoạn nhạc ngắn khi trang web được tải lên:</h3>
+
+  <audio controls autoplay muted>
+    <source src="mp3/chuyen43.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <textarea class="code-area">
+    <audio autoplay muted>
+      <source src="mp3/chuyen43.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </textarea>
+  <br>Trong ví dụ này, chúng ta sử dụng thuộc tính autoplay để tự động phát nhạc khi trang web được tải lên.
+
+  <h3> Phát nhạc nền cho trang web:</h3>
+
+  <audio controls loop>
+    <source src="mp3/chuyen70.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <textarea class="code-area">
+    <audio controls loop>
+      <source src="mp3/chuyen70.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </textarea>
+  <br>Trong ví dụ này, chúng ta sử dụng thuộc tính loop để phát lại bài hát liên tục.
+  </p>
+  <h2>Video</h2>
+  <h3>Video từ một tập tin cục bộ:</h3>
+
+  <video controls>
+    <source src="mp3/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  <textarea class="code-area">
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </textarea>
+  <h3>Video từ một đường dẫn đến video trên mạng:</h3>
+  <textarea class="code-area">
+<video controls>
+  <source src="https://example.com/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+      </textarea>
+  <h3>Video với nhiều định dạng khác nhau để hỗ trợ các trình duyệt khác nhau:</h3>
+
+  <textarea class="code-area">
+          <video controls>
+            <source src="video.mp4" type="video/mp4">
+            <source src="video.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+        </textarea>
+
+  <h3>Video với khung nhỏ (thumbnail) được hiển thị cho đến khi người dùng bấm vào để phát video:</h3>
+
+  <video controls poster="thumbnail.jpeg">
+    <source src="mp3/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <textarea class="code-area">
+<video controls poster="thumbnail.jpg">
+<source src="video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></textarea>
+  <h3>Video với tùy chọn autoplay:</h3>
+
+  <video controls autoplay muted>
+    <source src="mp3/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  <textarea class="code-area">
+<video controls autoplay>
+<source src="video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></textarea>
+  <h3>Video với tùy chọn lặp lại (loop):</h3>
+
+  <video controls loop>
+    <source src="mp3/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <textarea class="code-area">
+  <video controls loop>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+              </textarea>
+</body>
+
+</html>

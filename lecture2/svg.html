@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SVG Dropdown Example</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<script>
+		function createSVG() {
+			var shape = document.getElementById("shapes").value;
+			var svg = document.getElementById("svg");
+			svg.innerHTML = "";
+			
+			switch (shape) {
+				case "rectangle":
+					svg.innerHTML = '<rect x="50" y="50" width="100" height="80" fill="red" stroke="black" stroke-width="2" />';
+					break;
+				case "circle":
+					svg.innerHTML = '<circle cx="150" cy="100" r="50" fill="blue" stroke="black" stroke-width="2" />';
+					break;
+				case "line":
+					svg.innerHTML = '<line x1="50" y1="200" x2="250" y2="200" stroke="green" stroke-width="4" />';
+					break;
+				case "polygon":
+					svg.innerHTML = '<polygon points="150,250 100,200 200,200" fill="orange" stroke="black" stroke-width="2" />';
+					break;
+				default:
+					break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<label for="shapes">Select a Shape:</label>
+	<select id="shapes" onchange="createSVG()">
+		<option value="">Choose a Shape</option>
+		<option value="rectangle">Rectangle</option>
+		<option value="circle">Circle</option>
+		<option value="line">Line</option>
+		<option value="polygon">Polygon</option>
+	</select>
+	<br><br>
+	<svg id="svg" width="300" height="300"></svg>
+
+	<h1>Code</h1>
+   <div class="row">
+    <div class="column2">
+        <textarea disabled class="code" style="height:400px;">
+<label for="shapes">Select a Shape:</label>
+<select id="shapes" onchange="createSVG()">
+	<option value="">Choose a Shape</option>
+	<option value="rectangle">Rectangle</option>
+	<option value="circle">Circle</option>
+	<option value="line">Line</option>
+	<option value="polygon">Polygon</option>
+</select>
+<br><br>
+<svg id="svg" width="300" height="300"></svg>
+        </textarea>
+    </div>
+    <div class="column1">
+        <textarea disabled class="code" style="height:400px;">
+<script>
+function createSVG() {
+	var shape = document.getElementById("shapes").value;
+	var svg = document.getElementById("svg");
+	svg.innerHTML = "";
+	
+	switch (shape) {
+		case "rectangle":
+			svg.innerHTML = '<rect x="50" y="50" width="100" height="80" fill="red" stroke="black" stroke-width="2" />';
+			break;
+		case "circle":
+			svg.innerHTML = '<circle cx="150" cy="100" r="50" fill="blue" stroke="black" stroke-width="2" />';
+			break;
+		case "line":
+			svg.innerHTML = '<line x1="50" y1="200" x2="250" y2="200" stroke="green" stroke-width="4" />';
+			break;
+		case "polygon":
+			svg.innerHTML = '<polygon points="150,250 100,200 200,200" fill="orange" stroke="black" stroke-width="2" />';
+			break;
+		default:
+			break;
+	}
+}
+</script> 
+		</textarea>
+    </div>
+   </div>
+</body>
+</html>

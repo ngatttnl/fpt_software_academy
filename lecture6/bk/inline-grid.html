@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .grid1 {
+            display: inline-grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .cell {
+            height: 100px;
+        }
+
+        .color-1 {
+            background-color: red;
+        }
+
+        .color-2 {
+            background-color: green;
+        }
+
+        .color-3 {
+            background-color: blue;
+        }
+
+        .color-4 {
+            background-color: yellow;
+        }
+
+        .color-5 {
+            background-color: orange;
+        }
+
+        .color-6 {
+            background-color: purple;
+        }
+
+        /* Example 2 */
+        .grid2 {
+            display: inline-grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .cell {
+            height: 100px;
+            width: 100px;
+            padding-bottom: 100%;
+        }
+
+        .square-1 {
+            background-color: red;
+        }
+
+        .square-2 {
+            background-color: green;
+        }
+
+        .square-3 {
+            background-color: blue;
+        }
+
+        .square-4 {
+            background-color: yellow;
+        }
+
+        /* Example 3 */
+        .grid3 {
+            display: inline-grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 300px;
+            gap: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Grid</h2>
+
+    <div class="grid1">
+        <div class="cell color-1">1</div>
+        <div class="cell color-2">2</div>
+        <div class="cell color-3">3</div>
+        <div class="cell color-4">4</div>
+        <div class="cell color-5">5</div>
+        <div class="cell color-6">6</div>
+    </div>
+
+    <h2>Example 2</h2>
+    <div class="grid2">
+        <div class="cell square-1">a</div>
+        <div class="cell square-2">b</div>
+        <div class="cell square-3">c</div>
+        <div class="cell square-4">d</div>
+    </div>
+
+    <h2>Example 3</h2>
+    <div class="grid3">
+        <img src="https://picsum.photos/200/200?random=1" alt="Image 1">
+        <img src="https://picsum.photos/200/200?random=2" alt="Image 2">
+        <img src="https://picsum.photos/200/200?random=3" alt="Image 3">
+        <img src="https://picsum.photos/200/200?random=4" alt="Image 4">
+        <img src="https://picsum.photos/200/200?random=5" alt="Image 5">
+        <img src="https://picsum.photos/200/200?random=6" alt="Image 6">
+    </div>
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<div class="grid">
+    <div class="cell color-1"></div>
+    <div class="cell color-2"></div>
+    <div class="cell color-3"></div>
+    <div class="cell color-4"></div>
+    <div class="cell color-5"></div>
+    <div class="cell color-6"></div>
+</div>
+                  
+            
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    
+.box {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 100px;
+    background-color: lightgray;
+    font-size: 50px;
+    text-align: center;
+    margin: 5px;
+    }
+                   
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

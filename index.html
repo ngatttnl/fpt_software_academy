@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanh Nga - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* Style for row 1 */
+        .row-1 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .box {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            width: 30%;
+            text-align: center;
+        }
+
+        .box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Style for row 2 */
+        .row-2 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            width: 30%;
+            text-align: center;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            width: 80px;
+            height: 80px;
+        }
+
+        .testimonial h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
+
+        #js {
+            background-color: #d3d3d3;
+        }
+
+        #css {
+            background-color: #b8dbe1;
+        }
+
+        #html {
+            background-color: #f0e3cc;
+        }
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = "test/" + item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="logo" href="index.html">Thanh Nga</a>
+        
+        <div class="topnav-right">
+            <a class="active" href="index.html">Home</a>
+            <a href="lecture1.html">Lecture 1</a>
+            <a href="lecture2.html">Lecture 2</a>
+            <a href="lecture3.html">Lecture 3</a>
+            <a href="lecture4.html">Lecture 4</a>
+            <a href="lecture5.html">Lecture 5</a>
+            <a href="lecture6.html">Lecture 6</a>
+            <a href="lecture7.html">Lecture 7</a>
+            <a href="lecture8.html">Lecture 8</a>
+            <a href="lecture9.html">Lecture 9</a>
+            <a class="call_to_action" href="tel: +0912345678">Call me</a>
+        </div>
+    </div>
+
+    <main >
+        <br><br>
+        <div style="height: 100%; overflow: scroll;">
+            <h1>Teaching</h1>
+            <section class="row-1">
+                <div class="box" id="html">
+                    <h2>HTML</h2>
+                    <p>HTML is the markup language used to structure content on the web. It provides a set of tags that
+                        allow
+                        you to define headings, paragraphs, lists, links, and other types of content. Learning HTML is a
+                        great
+                        starting point for anyone interested in web development.
+                        <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML at w3schools</a>
+                    </p>
+                </div>
+                <div class="box" id="css">
+                    <h2>CSS</h2>
+                    <p>CSS is the language used to style HTML content on the web. With CSS, you can set colors, fonts,
+                        layouts,
+                        and other visual aspects of your website. Learning CSS will enable you to create beautiful,
+                        responsive
+                        designs that look great on any device.
+                        <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS at w3schools</a>
+                    </p>
+                </div>
+                <div class="box" id="js">
+                    <h2>JavaScript</h2>
+                    <p>JavaScript is the programming language used to add interactivity and dynamic behavior to web
+                        pages.
+                        With
+                        JavaScript, you can create animations, handle user input, and communicate with external APIs.
+                        Learning
+                        JavaScript will give you the skills to create powerful, interactive web applications.
+                        <a href="https://www.w3schools.com/js/default.asp" target="_blank">JavaScript at w3schools</a>
+                    </p>
+                </div>
+
+            </section>
+            <h1>My Projects</h1>
+            <section>
+                <div class="projects">
+                    <div class="project" id="project1">
+                        <div class="project-image">
+                            <img src="https://picsum.photos/300/300?random=1" alt="Product Management">
+                        </div>
+                        
+                        <h4 class="project-title"><a class="back-btn" href="projects/products/index.html">Product Management</a></h4>
+                        
+                    </div>
+
+                    <div class="project" id="project2">
+                        <div class="project-image">
+                            <img src="https://picsum.photos/300/300?random=2" alt="Personal web">
+                        </div>
+                        <h4 class="project-title"><a class="back-btn" href="projects/personal_web/index.html">Personal web</a></h4>
+                    </div>
+
+                    <div class="project" id="project3">
+                        <div class="project-image">
+                            <img src="https://picsum.photos/300/300?random=3" alt="Organization">
+                        </div>
+                        <h4 class="project-title"><a class="back-btn" href="projects/organization/index.html">Organization</a></h4>
+                    </div>
+
+                    <div class="project" id="project3">
+                        <div class="project-image">
+                            <img src="https://picsum.photos/300/300?random=4" alt="Event System">
+                        </div>
+                        <h4 class="project-title"><a class="back-btn" href="projects/event_system/index.html">Event System</a></h4>
+                    </div>
+                </div>
+
+               <!-- <div class="project-details" id="details1">
+                    <h2 class="project-title">Dự án 1</h2>
+                    <p class="project-description">Mô tả dự án 1</p>
+                    <p class="project-date">Ngày hoàn thành: 1/1/2022</p>
+                    <a class="back-btn" href="#">Quay lại</a>
+                </div>-->
+
+                
+            </section>
+            <h1>Quotes</h1>
+            <section class="row-2">
+                
+                <div class="testimonial">
+                    <img src="https://picsum.photos/150/150?random=1" alt="testimonial image">
+                    <h3>Dr. Seuss</h3>
+                    <p>"The more that you read, the more things you will know. The more that you learn, the more places
+                        you’ll go"
+                    </p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://picsum.photos/100/100?random=2" alt="testimonial image">
+                    <h3>Aristotle</h3>
+                    <p>"For the things we have to learn before we can do them, we learn by doing them."</p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://picsum.photos/150/150?random=3" alt="testimonial image">
+                    <h3>B.B. King</h3>
+                    <p>"The beautiful thing about learning is that nobody can take it away from you."
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+<br>
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

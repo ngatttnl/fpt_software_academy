@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .slider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+
+    .slider-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      margin: 0 -20px;
+    }
+
+    .slider-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: calc(25% - 20px);
+      margin: 0 20px;
+    }
+
+    .slider-item img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: gray;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .slider-dot.active {
+      background-color: black;
+    }
+  </style>
+  <script>
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+
+    let currentIndex = 0;
+
+    sliderDots[currentIndex].classList.add('active');
+
+    sliderDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        sliderWrapper.scrollTo({
+          left: sliderItems[index].offsetLeft - sliderItems[0].offsetLeft,
+          behavior: 'smooth'
+        });
+        currentIndex = index;
+        updateSliderNav();
+      });
+    });
+
+    sliderWrapper.addEventListener('scroll', () => {
+      const currentLeft = sliderWrapper.scrollLeft + sliderItems[0].offsetLeft;
+      let index = 0;
+      let minDistance = Number.MAX_VALUE;
+
+      sliderItems.forEach((item, i) => {
+        const distance = Math.abs(item.offsetLeft - currentLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          index = i;
+        }
+      });
+
+      currentIndex = index;
+      updateSliderNav();
+    });
+
+    function updateSliderNav() {
+      sliderDots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      sliderDots[currentIndex].classList.add('active');
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <h2>Grid</h2>
+
+  <div class="slider">
+    <div class="slider-wrapper">
+      <div class="slider-item"><img src="https://picsum.photos/id/1019/800/600" alt=""></div>
+      <div class="slider-item"><img src="https://picsum.photos/id/1020/800/600" alt=""></div>
+      <div class="slider-item"><img src="https://picsum.photos/id/1021/800/600" alt=""></div>
+      <div class="slider-item"><img src="https://picsum.photos/id/1022/800/600" alt=""></div>
+    </div>
+    <div class="slider-nav">
+      <div class="slider-dot"></div>
+      <div class="slider-dot"></div>
+      <div class="slider-dot"></div>
+      <div class="slider-dot"></div>
+    </div>
+  </div>
+
+
+  <h1>Code</h1>
+  <div class="row">
+    <div class="column1">
+      <textarea class="code">
+<div class="slider">
+  <div class="slider-wrapper">
+    <div class="slider-item"><img src="https://picsum.photos/200/200?random=1" alt=""></div>
+      <div class="slider-item"><img src="https://picsum.photos/200/200?random=2" alt=""></div>
+      <div class="slider-item"><img src="https://picsum.photos/200/200?random=3" alt=""></div>
+      <div class="slider-item"><img src="https://picsum.photos/200/200?random=4" alt=""></div>
+    </div>
+  <div class="slider-nav">
+    <div class="slider-dot"></div>
+    <div class="slider-dot"></div>
+    <div class="slider-dot"></div>
+    <div class="slider-dot"></div>
+  </div>
+</div>
+        
+            
+      </textarea>
+    </div>
+    <div class="column2">
+      <pre>
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.slider-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -20px;
+}
+
+.slider-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(25% - 20px);
+  margin: 0 20px;
+}
+
+.slider-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background-color: black;
+}
+<!-- bỏ comment ở đây
+  <script>
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+
+    let currentIndex = 0;
+
+    sliderDots[currentIndex].classList.add('active');
+
+    sliderDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        sliderWrapper.scrollTo({
+          left: sliderItems[index].offsetLeft - sliderItems[0].offsetLeft,
+          behavior: 'smooth'
+        });
+        currentIndex = index;
+        updateSliderNav();
+      });
+    });
+
+    sliderWrapper.addEventListener('scroll', () => {
+      const currentLeft = sliderWrapper.scrollLeft + sliderItems[0].offsetLeft;
+      let index = 0;
+      let minDistance = Number.MAX_VALUE;
+
+      sliderItems.forEach((item, i) => {
+        const distance = Math.abs(item.offsetLeft - currentLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          index = i;
+        }
+      });
+
+      currentIndex = index;
+      updateSliderNav();
+    });
+
+    function updateSliderNav() {
+      sliderDots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      sliderDots[currentIndex].classList.add('active');
+    }
+
+  </script>
+-bỏ comment ở đây-->              
+      </pre>
+    </div>
+  </div>
+
+</body>
+
+</html>

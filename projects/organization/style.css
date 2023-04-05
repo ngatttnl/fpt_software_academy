@@ -1,0 +1,150 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+    display: flex;
+  }
+  
+  
+  
+  nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .banner {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  
+  .banner img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .introduction {
+    background-color: #f7f7f7;
+    padding: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .introduction h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .introduction p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: justify;
+    color: #555;
+  }
+  
+  
+  .projects {
+    margin: 50px 0;
+    text-align: center;
+  }
+  
+  .projects h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .projects ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .projects li {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+  }
+  
+  
+  .projects h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .projects p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .contact {
+    text-align: center;
+    padding: 50px;
+    background-color: #f7f7f7;
+  }
+  
+  .contact h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .contact p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  footer li {
+    margin-left: 20px;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

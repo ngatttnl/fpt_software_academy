@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #grad0 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to bottom right, red, yellow);
+        }
+
+        #grad1 {
+            height: 100px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(0deg, red, yellow);
+        }
+
+        #grad2 {
+            height: 100px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(90deg, red, yellow);
+        }
+
+        #grad3 {
+            height: 100px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(180deg, red, yellow);
+        }
+
+        #grad4 {
+            height: 100px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(-90deg, red, yellow);
+        }
+
+        /*Multi colors */
+        #mult_grad1 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(red, yellow, green);
+        }
+
+        #mult_grad2 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        #mult_grad3 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(red 10%, green 85%, blue 90%);
+        }
+
+        #rainbow_grad1 {
+            height: 55px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        #trans_grad1 {
+            height: 200px;
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+        }
+
+        /*Repeating */
+        #rp_grad1 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+        }
+
+        #rp_grad2 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(45deg, red, yellow 7%, green 10%);
+        }
+
+        #rp_grad3 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(190deg, red, yellow 7%, green 10%);
+        }
+
+        #rp_grad4 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(90deg, red, yellow 7%, green 10%);
+        }
+
+        #rp_grad5 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px, yellow 10px, yellow 20px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Linear Gradient - Diagonal</h1>
+    <p>This linear gradient starts red at top left, transitioning to yellow (at bottom right):</p>
+    <div id="grad0"></div>
+
+    <h1>Linear Gradients - Using Different Angles</h1>
+    <div id="grad1" style="text-align:center;">0deg</div><br>
+    <div id="grad2" style="text-align:center;">90deg</div><br>
+    <div id="grad3" style="text-align:center;">180deg</div><br>
+    <div id="grad4" style="text-align:center;">-90deg</div>
+
+    <h1>Linear Gradients - Multiple Color Stops</h1>
+    <p><strong>Note:</strong> Color stops are spaced evenly when no percents are specified.</p>
+
+    <h2>3 Color Stops (evenly spaced):</h2>
+    <div id="grad1"></div>
+
+    <h2>7 Color Stops (evenly spaced):</h2>
+    <div id="grad2"></div>
+
+    <h2>3 Color Stops (not evenly spaced):</h2>
+    <div id="grad3"></div>
+
+
+    <div id="rainbow_grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+        Rainbow Background
+    </div>
+
+
+    <h1>Linear Gradient - Transparency</h1>
+    <p>To add transparency, we use the rgba() function to define the color stops. The last parameter in the rgba()
+        function can be a value from 0 to 1, and it defines the transparency of the color: 0 indicates full
+        transparency, 1 indicates full color (no transparency).</p>
+
+    <div id="trans_grad1"></div>
+
+    <h1>Repeating Linear Gradient</h1>
+
+    <div>
+        <div id="rp_grad1"></div>
+
+        <p>A repeating gradient on 45deg axe starting red and finishing green:</p>
+        <div id="rp_grad2"></div>
+
+        <p>A repeating gradient on 190deg axe starting red and finishing green:</p>
+        <div id="rp_grad3"></div>
+
+        <p>A repeating gradient on 90deg axe starting red and finishing green:</p>
+        <pre>
+        #rp_grad4 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(90deg, red, yellow 7%, green 10%);
+        }
+        </pre>
+        <div id="rp_grad4"></div>
+
+        <p>A repeating linear gradient with solid stripes:</p>
+        <pre>#rp_grad5 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px, yellow 10px, yellow 20px);
+        }  </pre>
+        
+        <div id="rp_grad5"></div>
+    </div>
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code" style="height: 300px;">
+<h1>Linear Gradient - Diagonal</h1>
+    <p>This linear gradient starts red at top left, transitioning to yellow (at bottom right):</p>
+    <div id="grad0"></div>
+
+    <h1>Linear Gradients - Using Different Angles</h1>
+    <div id="grad1" style="text-align:center;">0deg</div><br>
+    <div id="grad2" style="text-align:center;">90deg</div><br>
+    <div id="grad3" style="text-align:center;">180deg</div><br>
+    <div id="grad4" style="text-align:center;">-90deg</div>
+
+    <h1>Linear Gradients - Multiple Color Stops</h1>
+    <p><strong>Note:</strong> Color stops are spaced evenly when no percents are specified.</p>
+
+    <h2>3 Color Stops (evenly spaced):</h2>
+    <div id="grad1"></div>
+
+    <h2>7 Color Stops (evenly spaced):</h2>
+    <div id="grad2"></div>
+
+    <h2>3 Color Stops (not evenly spaced):</h2>
+    <div id="grad3"></div>
+
+
+    <div id="rainbow_grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+        Rainbow Background
+    </div>
+
+
+    <h1>Linear Gradient - Transparency</h1>
+    <p>To add transparency, we use the rgba() function to define the color stops. The last parameter in the rgba()
+        function can be a value from 0 to 1, and it defines the transparency of the color: 0 indicates full
+        transparency, 1 indicates full color (no transparency).</p>
+
+    <div id="trans_grad1"></div>
+
+    <h1>Repeating Linear Gradient</h1>
+
+    <div>
+        <div id="rp_grad1"></div>
+
+        <p>A repeating gradient on 45deg axe starting red and finishing green:</p>
+        <div id="rp_grad2"></div>
+
+        <p>A repeating gradient on 190deg axe starting red and finishing green:</p>
+        <div id="rp_grad3"></div>
+
+        <p>A repeating gradient on 90deg axe starting red and finishing green:</p>
+        <div id="rp_grad4"></div>
+
+        <pre>#rp_grad5 {
+            height: 200px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px, yellow 10px, yellow 20px);
+        }  </pre>
+        <p>A repeating linear gradient with solid stripes:</p>
+        <div id="rp_grad5"></div>
+    </div>
+                  
+
+      </textarea>
+        </div>
+        <div class="column1">
+     <pre>
+#grad0 {
+    height: 200px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+#grad1 {
+    height: 100px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(0deg, red, yellow);
+}
+
+#grad2 {
+    height: 100px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(90deg, red, yellow);
+}
+
+#grad3 {
+    height: 100px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(180deg, red, yellow);
+}
+
+#grad4 {
+    height: 100px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(-90deg, red, yellow);
+}
+
+#mult_grad1 {
+    height: 200px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(red, yellow, green);
+}
+
+#mult_grad2 {
+    height: 200px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+}
+
+#mult_grad3 {
+    height: 200px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(red 10%, green 85%, blue 90%);
+}
+
+#rainbow_grad1 {
+    height: 55px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+#trans_grad1 {
+    height: 200px;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+}
+
+#rp_grad1 {
+    height: 200px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+}
+
+#rp_grad2 {
+    height: 200px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: repeating-linear-gradient(45deg, red, yellow 7%, green 10%);
+}
+
+#rp_grad3 {
+    height: 200px;
+    background-color: red;
+    /* For browsers that do not support gradients */
+    background-image: repeating-linear-gradient(190deg, red, yellow 7%, green 10%);
+}
+
+
+    </pre>
+    
+        </div>
+    </div>
+
+</body>
+
+</html>

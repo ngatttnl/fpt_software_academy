@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Style the form container */
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+        }
+
+        /* Style the form inputs */
+        .form-container input[type=text],
+        .form-container input[type=textarea],
+        .form-container input[type=email],
+        .form-container select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style the form button */
+        .form-container button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        /* Add media queries for smaller screens */
+        @media screen and (max-width: 600px) {
+
+            /* Adjust the form inputs */
+            .form-container input[type=text],
+            .form-container input[type=textarea],
+            .form-container input[type=email],
+            .form-container select {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+            }
+
+            /* Adjust the form button */
+            .form-container button[type=submit] {
+                width: 100%;
+                margin-top: 10px;
+                float: none;
+            }
+        }
+
+        xmp {
+            white-space: pre-wrap;
+            font-family: monospace;
+            
+            line-height: 1.5;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Form</h2>
+
+    <div class="form-container">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject">
+                <option value="general">General</option>
+                <option value="support">Support</option>
+                <option value="billing">Billing</option>
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+
+            <button type="submit">Submit</button>
+
+    </div>
+
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column2">
+            <xmp>
+<form>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit">Send</button>
+</form>
+
+            </xmp>
+        </div>
+        <div class="column2">
+            <pre>
+/* Style the form container */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+/* Style the form inputs */
+.form-container input[type=text],
+.form-container input[type=textarea], 
+.form-container input[type=email], 
+.form-container select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style the form button */
+.form-container button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width: 600px) {
+    /* Adjust the form inputs */
+    .form-container input[type=text], 
+    .form-container input[type=textarea], 
+    .form-container input[type=email], 
+    .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    }
+
+    /* Adjust the form button */
+    .form-container button[type=submit] {
+    width: 100%;
+    margin-top: 10px;
+    float: none;
+    }
+}
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

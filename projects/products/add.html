@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>Quản lý sản phẩm</h1>
+    <form>
+      <label for="tenSanPham">Tên sản phẩm:</label>
+      <input type="text" id="tenSanPham" name="tenSanPham"><br>
+
+      <label for="moTa">Mô tả:</label>
+      <textarea id="moTa" name="moTa"></textarea><br>
+
+      <label for="gia">Giá:</label>
+      <input type="text" id="gia" name="gia"><br>
+
+      <label for="soLuong">Số lượng còn lại:</label>
+      <input type="text" id="soLuong" name="soLuong"><br>
+
+      <label for="anhSanPham">Ảnh sản phẩm:</label>
+      <input type="file" id="anhSanPham" name="anhSanPham"><br>
+
+      <label for="thuongHieu">Thương hiệu:</label>
+      <select id="thuongHieu" name="thuongHieu">
+        <option value="apple">Apple</option>
+        <option value="samsung">Samsung</option>
+        <option value="xiaomi">Xiaomi</option>
+        <option value="oppo">OPPO</option>
+      </select><br>
+
+      <label for="danhMuc">Danh mục sản phẩm:</label>
+      <select id="danhMuc" name="danhMuc">
+        <option value="dienThoai">Điện thoại</option>
+        <option value="mayTinhBang">Máy tính bảng</option>
+        <option value="mayTinhXachTay">Máy tính xách tay</option>
+        <option value="phuKien">Phụ kiện</option>
+      </select><br>
+
+      <input type="submit" value="Cập nhật">
+    </form>
+  </body>
+</html>

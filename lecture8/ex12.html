@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        .image-container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 80vh;
+            color: #fff;
+            margin: 0 auto;
+
+        }
+
+
+        .image {
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image:hover {
+            transform: scale(1.2);
+        }
+
+        .caption {
+            left: 0;
+            width: 80%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+            box-sizing: border-box;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover .caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img class="image" src="https://picsum.photos/400/400?random=1" alt="Image">
+        <div class="caption">"Learn to light a candle in the darkest moments of someone’s life. Be the light that helps
+            others see; it is what gives life its deepest significance."
+            ― Roy T. Bennett,</div>
+    </div>
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        const image = document.querySelector('.image');
+        const caption = document.querySelector('.caption');
+        const images = [
+            {
+                url: 'https://picsum.photos/400/400?random=1',
+                text: "Learn to light a candle in the darkest moments of someone’s life. Be the light that helps others see; it is what gives life its deepest significance. ― Roy T. Bennett"
+            },
+            {
+                url: 'https://picsum.photos/400/400?random=2',
+                text: "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty. ― Winston Churchill"
+            },
+            {
+                url: 'https://picsum.photos/400/400?random=3',
+                text: "Believe you can and you're halfway there. ― Theodore Roosevelt"
+            },
+            {
+                url: 'https://picsum.photos/400/400?random=4',
+                text: "You miss 100% of the shots you don't take. ― Wayne Gretzky"
+            }
+        ];
+        let index = 0;
+
+        function changeImage() {
+            index = (index + 1) % images.length;
+            image.src = images[index].url;
+            caption.textContent = images[index].text;
+        }
+
+        setInterval(changeImage, 3000);
+
+
+
+    </script>
+</body>
+
+</html>

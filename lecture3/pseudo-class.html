@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Button Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Target the 1st child element of all <li> elements */
+        li:first-child {
+            font-weight: bold;
+        }
+
+        /* Target the 3rd child element of all <li> elements */
+        li:nth-child(3) {
+            color: red;
+        }
+
+        /* Target every even child element of all <li> elements */
+        li:nth-child(even) {
+            background-color: lightblue;
+        }
+
+        input[type="checkbox"]:checked {
+            border-color: green;
+            background-color: lightgreen;
+        }
+
+        button:active {
+            background-color: green;
+            color: white;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    Read more here: <a target="_blank" href="https://www.w3schools.com/css/css_pseudo_classes.asp">w3schools</a>
+    <p>
+        Pseudo-classes are a type of selector in CSS that allows you to target an element based on its state or
+        relationship with other elements in the document. Pseudo-classes are identified by a colon (:) followed by a
+        keyword that represents the state or relationship you want to target.
+
+        Here are some common examples of pseudo-classes in CSS:
+    <ul>
+        <li>:hover - targets an element when the user hovers over it with their mouse
+        <li>:active - targets an element when it is being clicked or tapped</li>
+        <li>:focus - targets an element when it has focus, such as when it is selected using the Tab key</li>
+        <li>:first-child - targets the first child element of a parent element</li>
+        <li>:last-child - targets the last child element of a parent element</li>
+        <li>:nth-child() - targets the nth child element of a parent element, where n is a number or formula</li>
+
+    </ul>
+    Pseudo-classes can be very useful for adding interactivity and dynamic effects to web pages, such as changing
+    the background color of a button when the user hovers over it, or highlighting the currently selected tab in a
+    navigation menu.
+    </p>
+
+    <h3>Checkbox Example</h3>
+    <label for="checkbox">Check me!</label>
+    <input type="checkbox" id="checkbox">
+    <br>
+    <h3>Button Example</h3>
+    <button>Click me</button>
+    <br><br>
+    <h3>Link Example</h3>
+    <a href="#">Hover me</a>
+
+    <!--=======CODE=======-->
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea disabled class="code">
+<h3>List Example</h3>
+<ul>
+    <li>:hover - targets an element when the user hovers over it with their mouse
+    <li>:active - targets an element when it is being clicked or tapped</li>
+    <li>:focus - targets an element when it has focus, such as when it is selected using the Tab key</li>
+    <li>:first-child - targets the first child element of a parent element</li>
+    <li>:last-child - targets the last child element of a parent element</li>
+    <li>:nth-child() - targets the nth child element of a parent element, where n is a number or formula</li>
+
+</ul>
+<h3>Checkbox Example</h3>
+<label for="checkbox">Check me!</label>
+<input type="checkbox" id="checkbox">
+<br>
+<h3>Button Example</h3>
+<button>Click me</button>
+<br><br>
+<h3>Link Example</h3>
+<a href="#">Hover me</a>
+            </textarea>
+        </div>
+        <div class="column1">
+            <pre>
+ul li:first-child {
+    font-weight: bold;
+}
+
+input[type="checkbox"]:checked {
+    border-color: green;
+    background-color: lightgreen;
+}
+
+button:active {
+    background-color: green;
+    color: white;
+}
+
+a:hover {
+    color: red;
+}
+            </pre>
+        </div>
+    </div>
+</body>
+
+</html>

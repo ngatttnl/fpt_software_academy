@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header,
+    footer {
+      height: 100px;
+      background-color: #ccc;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 200px auto;
+      height: calc(100vh - 200px);
+      /* Subtract header and footer height */
+    }
+
+    aside {
+      height: 100%;
+      background-color: #ddd;
+    }
+
+    main {
+      height: 100%;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+
+      /* Responsive layout for smaller screens */
+      .grid-container {
+        grid-template-columns: auto;
+        grid-template-rows: 200px auto;
+      }
+
+      aside {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h2>Grid</h2>
+
+
+  <header>Header</header>
+  <div class="grid-container">
+    <aside>Sidebar</aside>
+    <main>Main Content</main>
+  </div>
+  <footer>Footer</footer>
+
+
+
+  <h1>Code</h1>
+  <div class="row">
+    <div class="column1">
+      <textarea class="code">
+<header>Header</header>
+<div class="grid-container">
+  <aside>Sidebar</aside>
+  <main>Main Content</main>
+</div>
+<footer>Footer</footer>
+            
+      </textarea>
+    </div>
+    <div class="column2">
+      <pre>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  height: 100px;
+  background-color: #ccc;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px auto;
+  height: calc(100vh - 200px); /* Subtract header and footer height */
+}
+
+aside {
+  height: 100%;
+  background-color: #ddd;
+}
+
+main {
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Responsive layout for smaller screens */
+  .grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: 200px auto;
+  }
+
+  aside {
+    width: 100%;
+    height: 200px;
+  }
+}
+                           
+      </pre>
+    </div>
+  </div>
+
+</body>
+
+</html>

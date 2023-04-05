@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    
+    <style>
+        #quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        input[type=checkbox] {
+            margin-right: 10px;
+        }
+
+        #results-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="quiz-container">
+        <h1>Multiple Choice Quiz</h1>
+        <form id="quiz-form">
+            <h2>Question 1</h2>
+            <p>What are the three primary colors?</p>
+            <input type="checkbox" id="q1-a" name="q1" value="a">
+            <label for="q1-a">Red, Green, Blue</label><br>
+            <input type="checkbox" id="q1-b" name="q1" value="b">
+            <label for="q1-b">Yellow, Green, Red</label><br>
+            <input type="checkbox" id="q1-c" name="q1" value="c">
+            <label for="q1-c">Red, Blue, Yellow</label><br>
+
+            <h2>Question 2</h2>
+            <p>What is the largest animal on Earth?</p>
+            <input type="checkbox" id="q2-a" name="q2" value="a">
+            <label for="q2-a">Elephant</label><br>
+            <input type="checkbox" id="q2-b" name="q2" value="b">
+            <label for="q2-b">Blue Whale</label><br>
+            <input type="checkbox" id="q2-c" name="q2" value="c">
+            <label for="q2-c">Giraffe</label><br>
+
+            <h2>Question 3</h2>
+            <p>What is the capital of France?</p>
+            <input type="checkbox" id="q3-a" name="q3" value="a">
+            <label for="q3-a">Paris</label><br>
+            <input type="checkbox" id="q3-b" name="q3" value="b">
+            <label for="q3-b">London</label><br>
+            <input type="checkbox" id="q3-c" name="q3" value="c">
+            <label for="q3-c">Rome</label><br>
+
+            <input type="button" value="Submit" onclick="checkAnswers()">
+        </form>
+        <div id="results-container">Kết quả hiển thị ở đây: </div>
+    </div>
+
+
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+<div id="quiz-container">
+    <h1>Multiple Choice Quiz</h1>
+    <form id="quiz-form">
+        <h2>Question 1</h2>
+        <p>What are the three primary colors?</p>
+        <input type="checkbox" id="q1-a" name="q1" value="a">
+        <label for="q1-a">Red, Green, Blue</label><br>
+        <input type="checkbox" id="q1-b" name="q1" value="b">
+        <label for="q1-b">Yellow, Green, Red</label><br>
+        <input type="checkbox" id="q1-c" name="q1" value="c">
+        <label for="q1-c">Red, Blue, Yellow</label><br>
+
+        <h2>Question 2</h2>
+        <p>What is the largest animal on Earth?</p>
+        <input type="checkbox" id="q2-a" name="q2" value="a">
+        <label for="q2-a">Elephant</label><br>
+        <input type="checkbox" id="q2-b" name="q2" value="b">
+        <label for="q2-b">Blue Whale</label><br>
+        <input type="checkbox" id="q2-c" name="q2" value="c">
+        <label for="q2-c">Giraffe</label><br>
+
+        <h2>Question 3</h2>
+        <p>What is the capital of France?</p>
+        <input type="checkbox" id="q3-a" name="q3" value="a">
+        <label for="q3-a">Paris</label><br>
+        <input type="checkbox" id="q3-b" name="q3" value="b">
+        <label for="q3-b">London</label><br>
+        <input type="checkbox" id="q3-c" name="q3" value="c">
+        <label for="q3-c">Rome</label><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div id="results-container"></div>
+</div>
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+#quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    }
+    
+    h1, h2 {
+    text-align: center;
+    }
+    
+    input[type=checkbox] {
+    margin-right: 10px;
+    }
+    
+    #results-container {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    }
+    
+    .correct {
+    color: green;
+    }
+    
+    .incorrect {
+    color: red;
+    }
+        
+    const quizForm = document.querySelector('#quiz-form');
+        quizForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            checkAnswers();
+        });
+
+        function checkAnswers() {
+            
+            const q1Answers = document.querySelectorAll('input[name=q1]:checked');
+            const q2Answers = document.querySelectorAll('input[name=q2]:checked');
+            const q3Answers = document.querySelectorAll('input[name=q3]:checked');
+            
+            const q1Correct = q1Answers.length === 1 && q1Answers[0].value === 'c';
+            const q2Correct = q2Answers.length === 1 && q2Answers[0].value === 'b';
+            const q3Correct = q3Answers.length === 1 && q3Answers[0].value === 'a';
+            
+            const totalScore = (q1Correct ? 1 : 0) + (q2Correct ? 1 : 0) + (q3Correct ? 1 : 0);
+            const resultsContainer = document.querySelector('#results-container');
+
+            let resultsHTML = '<h2>Results</h2>';
+            resultsHTML += `<p>You scored ${totalScore} out of 3.</p>`;
+
+            resultsHTML += '<ul>';
+            resultsHTML += `<li>Question 1: ${q1Correct ? 'Correct' : 'Incorrect'}</li>`;
+            resultsHTML += `<li>Question 2: ${q2Correct ? 'Correct' : 'Incorrect'}</li>`;
+            resultsHTML += `<li>Question 3: ${q3Correct ? 'Correct' : 'Incorrect'}</li>`;
+            resultsHTML += '</ul>';
+            resultsContainer.style.display = 'block';
+            resultsContainer.innerHTML = resultsHTML;
+            resultsContainer.display
+        }
+            </textarea>
+        </div>
+
+    </div>
+
+
+    <script>
+        const quizForm = document.querySelector('#quiz-form');
+        quizForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            checkAnswers();
+        });
+
+        function checkAnswers() {
+            
+            const q1Answers = document.querySelectorAll('input[name=q1]:checked');
+            const q2Answers = document.querySelectorAll('input[name=q2]:checked');
+            const q3Answers = document.querySelectorAll('input[name=q3]:checked');
+            
+            const q1Correct = q1Answers.length === 1 && q1Answers[0].value === 'c';
+            const q2Correct = q2Answers.length === 1 && q2Answers[0].value === 'b';
+            const q3Correct = q3Answers.length === 1 && q3Answers[0].value === 'a';
+            
+            const totalScore = (q1Correct ? 1 : 0) + (q2Correct ? 1 : 0) + (q3Correct ? 1 : 0);
+            const resultsContainer = document.querySelector('#results-container');
+
+            let resultsHTML = '<h2>Results</h2>';
+            resultsHTML += `<p>You scored ${totalScore} out of 3.</p>`;
+
+            resultsHTML += '<ul>';
+            resultsHTML += `<li>Question 1: ${q1Correct ? 'Correct' : 'Incorrect'}</li>`;
+            resultsHTML += `<li>Question 2: ${q2Correct ? 'Correct' : 'Incorrect'}</li>`;
+            resultsHTML += `<li>Question 3: ${q3Correct ? 'Correct' : 'Incorrect'}</li>`;
+            resultsHTML += '</ul>';
+            resultsContainer.style.display = 'block';
+            resultsContainer.innerHTML = resultsHTML;
+            resultsContainer.display
+        }
+
+
+    </script>
+</body>
+
+</html>

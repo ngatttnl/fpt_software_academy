@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Define the style for the ::before and ::after pseudo-elements */
+        p::before {
+            content: "Before text: ";
+            font-weight: bold;
+        }
+
+        p::after {
+            content: " After text.";
+            font-weight: bold;
+        }
+
+        /* Define the style for the ::selection pseudo-element */
+        p::-moz-selection {
+            /* Code for Firefox */
+            color: red;
+            background: yellow;
+        }
+
+        p::selection {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* Define the style for the ::first-letter pseudo-element */
+        p::first-letter {
+            font-size: 150%;
+            font-weight: bold;
+            color: red;
+        }
+
+        /* Define the style for the ::first-line pseudo-element */
+        p::first-line {
+            text-transform: uppercase;
+        }
+
+        /* Apply the styles to a paragraph element */
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Selection</h2>
+    <h3>Select some text on this page:</h3>
+
+    <p>This is a paragraph.</p>
+
+    p::selection is not supported in Internet Explorer 8 and earlier versions.</p>
+    Firefox supports an alternative, the ::-moz-selection property.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum</p>
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column2">
+            <textarea class="code">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+    of Lorem Ipsum</p>
+
+          </textarea>
+        </div>
+        <div class="column2">
+            <xmp>
+p::before {
+    content: "Before text: ";
+    font-weight: bold;
+}
+
+p::after {
+    content: " After text.";
+    font-weight: bold;
+}
+
+p::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+    color: red;
+}
+
+/* Define the style for the ::first-line pseudo-element */
+p::first-line {
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+p::-moz-selection {
+/* Code for Firefox */
+    color: red;
+    background: yellow;
+}
+
+p::selection {
+    color: red;
+    background: yellow;
+}
+            </xmp>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 0 10px;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .menu-icon i {
+                font-size: 24px;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .menu-icon i:hover {
+                color: #f00;
+            }
+
+            .nav-active .menu {
+                display: flex;
+                flex-direction: column;
+                background-color: #444;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                z-index: 1;
+                text-align: center;
+            }
+
+            .nav-active .menu li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const menu = document.querySelector('.menu');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('nav-active');
+        });
+
+    </script>
+</head>
+
+<body>
+    <h2>Navigation menu</h2>
+    <nav>
+        <div class="logo">Logo</div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<nav>
+    <div class="logo">Logo</div>
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="fa fa-bars"></i>
+    </div>
+</nav>
+
+      </textarea>
+        </div>
+        <div class="column1">
+            <pre>
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    }
+    
+.logo {
+    font-size: 24px;
+    }
+    
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+.menu li {
+    margin: 0 10px;
+    }
+    
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    }
+    
+.menu-icon {
+    display: none;
+    }
+    
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    
+.menu-icon {
+        display: block;
+    }
+    
+.menu-icon i {
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+    
+.menu-icon i:hover {
+        color: #f00;
+    }
+    
+.nav-active .menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+    }
+    
+.nav-active .menu li {
+        margin: 10px 0;
+    }
+    }
+        
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

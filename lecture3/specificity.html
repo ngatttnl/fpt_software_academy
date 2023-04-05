@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .container h3+p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> Thứ tự ưu tiên</h2>
+    Thứ tự áp dụng các khai báo CSS được kiểm soát bởi ba khái niệm chính: tầm quan trọng, độ cụ thể và source order.
+    <ol>
+        <li>Tầm quan trọng (Importance): Các khai báo CSS có thể được đánh dấu với độ ưu tiên cao hơn sử dụng thuộc tính
+            !important.
+            Khi sử dụng, các khai báo có độ ưu tiên cao hơn sẽ được áp dụng trước và ghi đè lên các khai báo khác.</li>
+        <li>Độ cụ thể (Specificity): Độ cụ thể là một chỉ số được tính dựa trên số lượng và loại các selector được sử
+            dụng
+            trong khai báo CSS. Độ cụ thể sẽ quyết định xem khai báo CSS nào sẽ
+            được ưu tiên áp dụng nếu có nhiều khai báo cho cùng một thuộc tính
+            của một phần tử HTML. Chỉ số độ cụ thể được tính dựa trên các
+            selector sau đây:
+            <ul>
+                <li> Selector element: 1 điểm.</li>
+                <li> Selector class: 10 điểm.</li>
+                <li> Selector ID: 100 điểm.</li>
+                <li> Selector inline style: 1000 điểm.</li>
+            </ul>
+            Ví dụ, một khai báo sử dụng selector ID và class sẽ có độ cụ thể là 110 điểm, cao hơn so với khai báo chỉ sử
+            dụng selector class (10 điểm).
+        </li>
+        <li>Source order: Source order là thứ tự các khai báo CSS được liệt kê trong tệp CSS hoặc trong phần đầu trang
+            của tài liệu HTML. Nếu hai khai báo có độ cụ thể và tầm quan trọng như nhau, khai báo nằm sau sẽ được áp
+            dụng.
+    </ol>
+    Tóm lại, thứ tự ưu tiên áp dụng các khai báo CSS sẽ được xác định bởi sự kết hợp của tầm quan trọng, độ cụ thể và
+    source order.
+    <h2>Specificity là gì?</h2>
+    <p> Trong CSS, specificity (độ cụ thể) được sử dụng để xác định quy tắc CSS nào được áp dụng cho một phần tử HTML cụ
+        thể. Quy tắc specificity được tính dựa trên các loại lựa chọn trong các bộ chọn CSS.
+    </p>
+    Các loại lựa chọn CSS theo thứ tự tăng dần độ cụ thể là:
+    <ol>
+        <li>Lựa chọn phần tử (element selector): đây là loại lựa chọn ít cụ thể nhất và áp dụng cho tất cả các phần tử
+            HTML cùng loại. <br> p, div, span,...</li>
+        <li>Lựa chọn lớp (class selector): đây là loại lựa chọn sẽ áp dụng cho tất cả các phần tử có cùng lớp.
+            <br>
+            .class-name.
+        </li>
+        <li>Lựa chọn ID: đây là loại lựa chọn cụ thể nhất và chỉ áp dụng cho một phần tử duy nhất có ID tương ứng.
+            <br> #id-name.
+        </li>
+        <li>Lựa chọn thuộc tính (attribute selector): đây là loại lựa chọn áp dụng cho các phần tử có thuộc tính tương
+            ứng. <br>[attribute-name].</li>
+        <li>Lựa chọn dấu phân cách (combinator selector): đây là loại lựa chọn kết hợp giữa hai hoặc nhiều loại lựa chọn
+            khác nhau. <br> ul li, .class1 .class2,...</li>
+
+    </ol>
+    <h2>Các quy tắc cần lưu ý khi tính toán độ cụ thể của một quy tắc CSS là:</h2>
+    <ol>
+        <li>Các loại lựa chọn CSS được sắp xếp theo thứ tự tăng dần độ cụ thể.</li>
+        <li>Quy tắc CSS với độ cụ thể cao hơn sẽ ghi đè lên quy tắc có độ cụ thể thấp hơn.</li>
+        <li>Đối với các quy tắc CSS có cùng độ cụ thể, quy tắc nằm sau sẽ ghi đè lên quy tắc nằm trước đó.</li>
+    </ol>
+
+    Các selector được sắp xếp từ độ cụ thể thấp nhất đến độ cụ thể cao nhất như sau:
+    <ol>
+        <li>
+            Lựa chọn phần tử (element selector)
+            <br>p { color: red; }
+        </li>
+        <li>Lựa chọn lớp (class selector)
+            <br> .my-class { color: red; }
+        </li>
+        <li>Lựa chọn ID (ID selector)
+            <br> #my-id { color: red; }
+        </li>
+        <li>Lựa chọn thuộc tính (attribute selector)
+            <br> [type="text"] { color: red; }
+        </li>
+        <li>Lựa chọn pseudo-class (pseudo-class selector)
+            <br> a:hover { color: red; }
+        </li>
+        <li>Lựa chọn pseudo-element (pseudo-element selector)
+            <br> p::first-letter { color: red; }
+        </li>
+    </ol>
+    <p>
+        Ngoài ra, các lựa chọn kết hợp cũng sẽ được tính đến để xác định độ cụ thể của quy tắc CSS. Khi có nhiều quy tắc
+        CSS áp dụng cho cùng một phần tử HTML, quy tắc có độ cụ thể cao nhất sẽ được áp dụng. Nếu hai quy tắc có độ cụ
+        thể
+        bằng nhau, quy tắc được khai báo sau cùng sẽ được áp dụng.
+    </p>
+    <pre>
+    <div id="my-div" class="my-class">
+        <p style="color: blue;">This is a paragraph.</p>
+    </div>
+    /* Độ cụ thể thấp nhất */
+    p {
+    color: red;
+    }
+
+    .my-class p {
+    color: green;
+    }
+
+    #my-div p {
+    color: blue;
+    }
+    /* Độ cụ thể cao nhất */
+</pre>
+    <p>
+        Trong ví dụ này, độ cụ thể của quy tắc #my-div p là cao nhất, do đó màu sắc của đoạn văn bản trong thẻ p sẽ là
+        màu
+        xanh dương.</p>
+    <h2>Combinator selector</h2>
+    Combinator selector là các ký tự hoặc cách sử dụng kết hợp giữa các selector để chọn các phần tử cụ thể hơn, bao
+    gồm:
+    <ul>
+        <li>Descendant Selector (Ký tự khoảng trắng) (space) để chọn phần tử con trong phần tử cha
+            <pre>
+div p {
+    color: red;
+}
+            </pre>
+            ==> Trong ví dụ này, tất cả các phần tử p là hậu duệ của các phần tử
+            div sẽ có màu văn bản là đỏ.
+        </li>
+        <li>Ký tự ">" để chọn phần tử con trực tiếp trong phần tử cha
+            <pre>
+ul > li {
+    list-style-type: square;
+}</pre>
+            ==> Trong ví dụ này, tất cả các phần tử
+            li là con trực tiếp của các phần tử ul sẽ có kiểu danh sách vuông.
+        </li>
+        <li>Ký tự "+" để chọn phần tử anh em kế tiếp trong cùng phần tử cha
+            <pre>
+h2 + p {
+    font-size: 18px;
+}
+            </pre>
+            Trong ví dụ này, tất cả các phần tử p ngay sau phần tử
+            h2 sẽ có cỡ chữ là 18px.
+            <h3>Xét ví dụ khác:</h3>
+            <div class="row">
+                <div class="column1">
+                    <textarea disabled class="code" style="height: 160px;">
+        <div class="container">
+            <h3>Heading</h3>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+            </ul>
+        </div>
+                    
+            </textarea>
+                </div>
+                <div class="column1">
+                    <pre>
+                    .container h3 + p {
+                    font-weight: bold;
+                    }</pre>
+                </div>
+            </div>
+            <br>Trong ví dụ này, cả hai phần tử 'h3' và 'p' đều có chung cha,
+            đó là phần tử 'div' có lớp là "container". Bất kỳ quy tắc CSS nào
+            nhắm mục tiêu bộ chọn tổ hợp h3 + p sẽ chỉ áp dụng cho các phần tử 'p' đứng sau
+            'h3' trong cùng một phần tử gốc 'div'.
+            <br>
+            <div class="container">
+                <h3>Heading</h3>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+                <ul>
+                    <li>List item 1</li>
+                    <li>List item 2</li>
+                </ul>
+            </div>
+            Vì vậy, trong trường hợp này, chỉ có "Paragraph 1" sẽ có phông chữ đậm.
+            "Paragraph 2" và 'ul' và các mục danh sách của nó không bị ảnh hưởng bởi vì chúng không phải là anh chị em
+            của phần tử 'h3' trong cùng một cha mẹ 'div'.
+        </li>
+        <li>Ký tự "~" để chọn tất cả phần tử anh em sau phần tử đầu tiên trong cùng phần tử cha
+            <pre>
+h3 ~ p {
+    font-weight: bold;
+}</pre>
+            ==> Trong ví dụ này, tất cả các phần tử p đứng sau phần tử h3 và chia sẻ cùng một phần tử cha sẽ có phông
+            chữ đậm.
+
+
+        </li>
+    </ul>
+    
+</body>
+
+</html>

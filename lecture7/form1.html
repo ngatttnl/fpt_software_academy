@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: coral;
+            cursor: pointer;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: white;">
+
+    <h2>Grid</h2>
+
+    <form >
+        <h2>Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Capital</th>
+                    <th>Population (millions)</th>
+                    <th>Language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>USA</td>
+                    <td>Washington D.C.</td>
+                    <td>328.2</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>China</td>
+                    <td>Beijing</td>
+                    <td>1393</td>
+                    <td>Chinese</td>
+                </tr>
+                <tr>
+                    <td>India</td>
+                    <td>New Delhi</td>
+                    <td>1366</td>
+                    <td>Hindi, English</td>
+                </tr>
+                <tr>
+                    <td>Japan</td>
+                    <td>Tokyo</td>
+                    <td>126.5</td>
+                    <td>Japanese</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Code</h1>
+        <div class="row">
+            <div class="column1">
+                <textarea class="code">
+<table>
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Capital</th>
+            <th>Population (millions)</th>
+            <th>Language</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>USA</td>
+            <td>Washington D.C.</td>
+            <td>328.2</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>China</td>
+            <td>Beijing</td>
+            <td>1393</td>
+            <td>Chinese</td>
+        </tr>
+        <tr>
+            <td>India</td>
+            <td>New Delhi</td>
+            <td>1366</td>
+            <td>Hindi, English</td>
+        </tr>
+        <tr>
+            <td>Japan</td>
+            <td>Tokyo</td>
+            <td>126.5</td>
+            <td>Japanese</td>
+        </tr>
+    </tbody>
+</table>
+            
+      </textarea>
+            </div>
+            <div class="column2">
+                <pre>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: coral;
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+      </pre>
+            </div>
+        </div>
+
+</body>
+
+</html>

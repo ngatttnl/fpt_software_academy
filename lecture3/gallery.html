@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .image-gallery {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .slides {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides img {
+            width: 50%;
+            height: 50%;
+            display: block;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -30px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dot.active,
+        .dot:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slides")[0].getElementsByTagName("img");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Image gallery </h2>
+
+    <div class="image-gallery">
+        <div class="slides">
+            <img src="https://picsum.photos/200/200?random=1" alt="Image 1">
+            <img src="https://picsum.photos/200/200?random=2" alt="Image 2">
+            <img src="https://picsum.photos/200/200?random=3" alt="Image 3">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <!--CODE-->
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<!--START CODE-->
+<h2>Image gallery </h2>
+
+    <div class="image-gallery">
+        <div class="slides">
+            <img src="https://picsum.photos/200/200?random=1" alt="Image 1">
+            <img src="https://picsum.photos/200/200?random=2" alt="Image 2">
+            <img src="https://picsum.photos/200/200?random=3" alt="Image 3">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides")[0].getElementsByTagName("img");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+<!--END CODE-->                 
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+.image-gallery {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    }
+    
+    .slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    }
+    
+    .slides img {
+    width: 100%;
+    height: auto;
+    display: none;
+    }
+    
+    .prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    }
+    
+    .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    }
+    
+    .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
+    
+    .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
+    
+    .dot.active, .dot:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    }
+            </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

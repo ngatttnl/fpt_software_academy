@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .table-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+            border-radius: 5px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 70%;
+            font-size: 16px;
+        }
+
+        #search-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #search-btn:hover {
+            background-color: #3e8e41;
+        }
+
+
+        .row-count {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="table-container">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-btn">Search</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Capital</th>
+                    <th>Population (millions)</th>
+                    <th>Language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>United States</td>
+                    <td>Washington D.C.</td>
+                    <td>328.2</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>China</td>
+                    <td>Beijing</td>
+                    <td>1393.8</td>
+                    <td>Chinese</td>
+                </tr>
+                <tr>
+                    <td>Brazil</td>
+                    <td>Brasília</td>
+                    <td>209.5</td>
+                    <td>Portuguese</td>
+                </tr>
+                <tr>
+                    <td>Russia</td>
+                    <td>Moscow</td>
+                    <td>144.5</td>
+                    <td>Russian</td>
+                </tr>
+                <tr>
+                    <td>India</td>
+                    <td>New Delhi</td>
+                    <td>1380.0</td>
+                    <td>Hindi, English</td>
+                </tr>
+                <tr>
+                    <td>Canada</td>
+                    <td>Ottawa</td>
+                    <td>37.6</td>
+                    <td>English, French</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <div class="row-count">Showing 1-5 of 10 entries</div>
+            <a href="#">&laquo;</a>
+            <a class="active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea class="code">
+<div class="table-container">
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button id="search-btn">Search</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Capital</th>
+                <th>Population (millions)</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>United States</td>
+                <td>Washington D.C.</td>
+                <td>328.2</td>
+                <td>English</td>
+            </tr>
+            <tr>
+                <td>China</td>
+                <td>Beijing</td>
+                <td>1393.8</td>
+                <td>Chinese</td>
+            </tr>
+            <tr>
+                <td>Brazil</td>
+                <td>Brasília</td>
+                <td>209.5</td>
+                <td>Portuguese</td>
+            </tr>
+            <tr>
+                <td>Russia</td>
+                <td>Moscow</td>
+                <td>144.5</td>
+                <td>Russian</td>
+            </tr>
+            <tr>
+                <td>India</td>
+                <td>New Delhi</td>
+                <td>1380.0</td>
+                <td>Hindi, English</td>
+            </tr>
+            <tr>
+                <td>Canada</td>
+                <td>Ottawa</td>
+                <td>37.6</td>
+                <td>English, French</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagination">
+        <div class="row-count">Showing 1-5 of 10 entries</div>
+        <a href="#">&laquo;</a>
+        <a class="active" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+</div>
+            
+      </textarea>
+        </div>
+        <div class="column2">
+            <pre>
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 5px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 70%;
+    font-size: 16px;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#search-btn:hover {
+    background-color: #3e8e41;
+}
+
+
+.row-count {
+    margin-right: 10px;
+    font-size: 14px;
+}                  
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

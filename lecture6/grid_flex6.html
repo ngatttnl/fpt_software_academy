@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      /* set the number of columns and their size */
+      gap: 20px;
+      /* add some gap between the cards */
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 767px) {
+      .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        /* change to one column on mobile */
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        /* change to two columns on tablet */
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h2>Grid</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <img src="https://picsum.photos/300/300?random=1" alt="your-image">
+      <h2>Your Title</h2>
+      <p>Your description text</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/300?random=2" alt="your-image">
+      <h2>Your Title</h2>
+      <p>Your description text</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/300?random=3" alt="your-image">
+      <h2>Your Title</h2>
+      <p>Your description text</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/300?random=4" alt="your-image">
+      <h2>Your Title</h2>
+      <p>Your description text</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/300?random=5" alt="your-image">
+      <h2>Your Title</h2>
+      <p>Your description text</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/300?random=6" alt="your-image">
+      <h2>Your Title</h2>
+      <p>Your description text</p>
+    </div>
+  </div>
+
+  <h1>Code</h1>
+  <div class="row">
+    <div class="column1">
+      <textarea class="code">
+<div class="card-grid">
+  <div class="card">
+    <img src="https://picsum.photos/300/300?random=1" alt="your-image">
+    <h2>Your Title</h2>
+    <p>Your description text</p>
+  </div>
+  <div class="card">
+    <img src="https://picsum.photos/300/300?random=2" alt="your-image">
+    <h2>Your Title</h2>
+    <p>Your description text</p>
+  </div>
+  <div class="card">
+    <img src="https://picsum.photos/300/300?random=3" alt="your-image">
+    <h2>Your Title</h2>
+    <p>Your description text</p>
+  </div>
+  <div class="card">
+    <img src="https://picsum.photos/300/300?random=4" alt="your-image">
+    <h2>Your Title</h2>
+    <p>Your description text</p>
+  </div>
+  <div class="card">
+    <img src="https://picsum.photos/300/300?random=5" alt="your-image">
+    <h2>Your Title</h2>
+    <p>Your description text</p>
+  </div>
+  <div class="card">
+    <img src="https://picsum.photos/300/300?random=6" alt="your-image">
+    <h2>Your Title</h2>
+    <p>Your description text</p>
+  </div>
+</div>
+                  
+      </textarea>
+    </div>
+    <div class="column2">
+      <pre>
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* set the number of columns and their size */
+  gap: 20px;
+  /* add some gap between the cards */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    /* change to one column on mobile */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* change to two columns on tablet */
+  }
+}                  
+      </pre>
+    </div>
+  </div>
+
+</body>
+
+</html>

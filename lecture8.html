@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanh Nga - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <style>
+
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = "lecture8/" + item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a class="logo" href="index.html">Thanh Nga</a>
+        <div class="topnav-right">
+            <a href="index.html">Home</a>
+            <a href="lecture1.html">Lecture 1</a>
+            <a href="lecture2.html">Lecture 2</a>
+            <a href="lecture3.html">Lecture 3</a>
+            <a href="lecture4.html">Lecture 4</a>
+            <a href="lecture5.html">Lecture 5</a>
+            <a href="lecture6.html">Lecture 6</a>
+            <a href="lecture7.html">Lecture 7</a>
+            <a href="lecture8.html" class="active">Lecture 8</a>
+            <a href="lecture9.html">Lecture 9</a>
+            <a class="call_to_action" href="tel: +0912345678">Call me</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </div>
+
+    <hr><br>
+    <div class="container">
+        <div class="frame">
+            <iframe id="myframe" src="lecture8/lecture.html"></iframe>
+
+        </div>
+        <div class="mnradio">
+            <h2>Một số thứ cần nhớ:</h2>
+            <input type="radio" id="lecture" checked name="fav_language" onclick="return radio_onclick('lecture')">
+            <label for="lecture">Multimedia (updating)</label><br>
+
+            <h2>Danh sách các ví dụ:</h2>
+
+            <input type="radio" id="ex1" name="fav_language" onclick="return radio_onclick('ex1')">
+            <label for="ex1">Example 1</label><br>
+            <input type="radio" id="ex2" name="fav_language" onclick="return radio_onclick('ex2')">
+            <label for="ex2">Example 2</label><br>
+            <input type="radio" id="ex3" name="fav_language" onclick="return radio_onclick('ex3')">
+            <label for="ex3">Example 3 - Image</label><br>
+
+            <input type="radio" id="ex4" name="fav_language" onclick="return radio_onclick('ex4')">
+            <label for="ex4">Example 4 - Image</label><br>
+
+            <input type="radio" id="ex5" name="fav_language" onclick="return radio_onclick('ex5')">
+            <label for="ex5">Example 5</label><br>
+
+            <input type="radio" id="ex6" name="fav_language" onclick="return radio_onclick('ex6')">
+            <label for="ex6">Example 6</label><br>
+
+            <input type="radio" id="ex7" name="fav_language" onclick="return radio_onclick('ex7')">
+            <label for="ex7">Example 7</label><br>
+
+            <input type="radio" id="ex8" name="fav_language" onclick="return radio_onclick('ex8')">
+            <label for="ex8">Example 8</label><br>
+
+            <input type="radio" id="ex9" name="fav_language" onclick="return radio_onclick('ex9')">
+            <label for="ex9">Example 9</label><br>
+
+            <input type="radio" id="ex10" name="fav_language" onclick="return radio_onclick('ex10')">
+            <label for="ex10">Example 10</label><br>
+
+            <input type="radio" id="ex12" name="fav_language" onclick="return radio_onclick('ex12')">
+            <label for="ex12">Example 12</label><br>
+
+            <input type="radio" id="ex13" name="fav_language" onclick="return radio_onclick('ex13')">
+            <label for="ex13">Example 13</label><br>
+
+            <input type="radio" id="ex14" name="fav_language" onclick="return radio_onclick('ex14')">
+            <label for="ex14">Example 14</label><br>
+
+            <input type="radio" id="ex15" name="fav_language" onclick="return radio_onclick('ex15')">
+            <label for="ex15">Example 15</label><br>
+            
+            <input type="radio" id="ex16" name="fav_language" onclick="return radio_onclick('ex16')">
+            <label for="ex16">Example 16 - Line 98</label><br>
+            <input type="radio" id="ex17" name="fav_language" onclick="return radio_onclick('ex17')">
+            <label for="ex17">Example 17</label><br>
+
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

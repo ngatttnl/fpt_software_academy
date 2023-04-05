@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        textarea,
+        select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0062cc;
+        }
+
+        datalist {
+            display: none;
+        }
+
+        input[type="text"]:focus+datalist {
+            display: block;
+        }
+
+        .radio-form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+
+            <div class="radio-form">
+                <label for="gender">Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="interests">Interests:</label>
+                <select id="interests" name="interests" required>
+                    <option value="">Please select your interests</option>
+                    <option value="reading">Reading</option>
+                    <option value="music">Music</option>
+                    <option value="sports">Sports</option>
+                    <option value="traveling">Traveling</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tags">Tags:</label>
+                <input type="text" id="tags" name="tags" list="tag-list" required>
+                <datalist id="tag-list">
+                    <option value="red">
+                    <option value="green">
+                    <option value="blue">
+                    <option value="yellow">
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="newsletter">Subscribe to Newsletter:</label>
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+            </div>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <a href="form3.html" download>Click here to download code</a>
+            <p>If the download doesn't start automatically,<br> please right-click the link and choose "Save As".</p>
+        </div>
+        <div class="column2">
+            <pre>
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0062cc;
+}
+
+datalist {
+    display: none;
+}
+
+input[type="text"]:focus+datalist {
+    display: block;
+}
+
+.radio-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}             
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

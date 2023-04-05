@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Button Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        button::after {
+            content: "+";
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+
+        button[type="submit"]::after {
+            content: "\2713";
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+
+        p::first-letter {
+            color: #ff0000;
+            font-size: xx-large;
+        }
+
+        h2::before {
+            content: url('images/smiley.gif');
+        }
+
+        h4::after {
+            content: url('https://picsum.photos/200/200?random=1');
+        }
+
+        ::marker {
+            color: red;
+            font-size: 23px;
+        }
+    </style>
+</head>
+
+<body>
+    Read more here: <a target="_blank" href="https://www.w3schools.com/css/css_pseudo_elements.asp">w3schools</a>
+    <p>
+        Pseudo-elements are a type of selector in CSS that allow you to target a specific part of an element and style
+        it separately from the rest of the element. Pseudo-elements are identified by two colons (::) followed by a
+        keyword that represents the part of the element you want to target.
+
+        Here are some common examples of pseudo-elements in CSS:
+    <ul>
+        <li>::before - targets the content before an element, which can be used to add decorative elements such as icons
+            or borders</li>
+        <li>::after - targets the content after an element, which can be used to add decorative elements such as icons
+            or text</li>
+        <li>::first-letter - targets the first letter of a block of text, which can be used to apply special styles such
+            as a drop cap</li>
+        <li>::first-line - targets the first line of a block of text, which can be used to apply special styles such as
+            a different font or color</li>
+    </ul>
+    Pseudo-elements can be very useful for adding decorative or structural elements to web pages without the need for
+    additional HTML markup. For example, you can use the ::before and ::after pseudo-elements to create custom bullet
+    points for a list, or the ::first-letter pseudo-element to create a special effect for the first letter of a
+    paragraph.
+    </p>
+    <button>Add</button>
+    <button type="submit">Submit</button>
+    <p>You can use the ::first-letter pseudo-element to add a special effect to the first character of a text!</p>
+
+    <h2>This is a heading USING ::before pseudo-element</h1>
+        <p>The ::before pseudo-element inserts content before the content of an element.</p>
+
+        <h4>This is a heading USING ::after pseudo-element</h4>
+        <p>The ::after pseudo-element inserts content after the content of an element.</p>
+
+        <h3>Marker examples</h3>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ol>
+
+
+        <h1>Code</h1>
+        <div class="row">
+            <div class="column1">
+                <textarea disabled class="code">
+<button>Add</button>
+<button type="submit">Submit</button>
+<p>You can use the ::first-letter pseudo-element to add a special effect to the first character of a text!</p>
+
+<h2>This is a heading USING ::before pseudo-element</h1>
+    <p>The ::before pseudo-element inserts content before the content of an element.</p>
+
+    <h4>This is a heading USING ::after pseudo-element</h4>
+    <p>The ::after pseudo-element inserts content after the content of an element.</p>
+
+    <h3>Marker examples</h3>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <ol>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ol>
+            </textarea>
+            </div>
+            <div class="column1">
+                <pre>
+button::after {
+    content: "+";
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+button[type="submit"]::after {
+    content: "\2713";
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+}
+
+h2::before {
+    content: url('images/smiley.gif');
+}
+
+h4::after {
+    content: url('images/bored-smiley.gif');
+}
+
+::marker {
+    color: red;
+    font-size: 23px;
+}
+
+            </pre>
+            </div>
+        </div>
+</body>
+
+</html>

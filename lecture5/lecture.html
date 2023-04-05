@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Card Demo</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <h2>Thiết kế trên desktop / tablet / mobile</h2>
+
+  Để thiết kế trang web đáp ứng tốt trên desktop, laptop và mobile, có một số điều cần nhớ như sau:
+  <ol>
+    <li>
+      Định dạng bố cục: Bố cục trang web cần phải đáp ứng được trên các kích thước màn hình khác nhau. Điều này có thể
+      được thực hiện bằng cách sử dụng kỹ thuật CSS Grid hoặc Flexbox.
+    </li>
+    <li>Cân bằng tỷ lệ hình ảnh: Hình ảnh là một phần quan trọng của trang web, nhưng nó cũng có thể ảnh hưởng đến tốc
+      độ
+      tải trang. Vì vậy, đảm bảo rằng các hình ảnh của bạn có tỷ lệ phù hợp, không quá lớn và được tối ưu hóa cho các
+      kích thước màn hình khác nhau.
+    </li>
+    <li>Thông tin trang web cần được tối giản: Trên các kích thước màn hình nhỏ hơn, trang web của bạn cần được tối giản
+      hóa để dễ đọc và tìm kiếm. Bạn nên xác định những phần quan trọng nhất của trang web và đảm bảo chúng hiển thị
+      trên các thiết bị di động.
+    </li>
+    <li>Thông tin phù hợp cho từng loại thiết bị: Bạn nên tìm hiểu về các kích thước màn hình thông thường của các thiết
+      bị để đảm bảo rằng thông tin trên trang web của bạn phù hợp với từng loại thiết bị.
+    </li>
+    <li>Kiểm tra và tối ưu hoá: Bạn nên kiểm tra trang web của mình trên nhiều loại thiết bị khác nhau để đảm bảo rằng
+      nó
+      hoạt động tốt và hiển thị đẹp trên mọi loại thiết bị. Ngoài ra, hãy tối ưu hóa trang web của bạn để giảm thiểu
+      thời gian tải trang và tối ưu hoá trải nghiệm người dùng.
+    </li>
+  </ol>
+  <h2>Sử dụng ::before và ::after pseudo-elements:</h2>
+<ol>
+  <li>Thêm vào 1 icon:
+  <pre>
+  .thumbnail::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 12px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-right: 10px;
+  }</pre></li>
+  <li>Styling external links:
+
+<pre>
+  a[href^="http://"]:not([href^="http://www.example.com"])::after {
+  content: url(external-link-icon.svg);
+  margin-left: 5px;
+  }</pre></li>
+  <li>Breadcrumbs (navigation):
+  You can use ::before or ::after to add separators between breadcrumb links. For example, you can add a "»" separator
+  using the following CSS:
+<pre>
+  .breadcrumb::after {
+  content: "»";
+  margin: 0 5px;
+  }</pre></li>
+  <li>Clearing floats:
+  You can use ::after to clear floats after a container. For example, you can clear floats after a navigation menu using
+  the following CSS:
+<pre>
+  nav::after {
+  content: "";
+  display: table;
+  clear: both;
+  }</pre></li>
+  <li>Create a tooltip:
+  You can use ::before or ::after to create a tooltip. For example, you can add a tooltip to a link using the following
+  <pre>
+  a.tooltip::before {
+  content: attr(title);
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5px;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  }
+  a.tooltip:hover::before {
+  opacity: 1;
+  }</pre></li>
+  These are just a few examples of the many ways you can use ::before and ::after in CSS.
+  </p>
+
+  <h1>Clearfix</h1>
+
+<p> Clearfix hack là một kỹ thuật được sử dụng trong CSS để khắc phục sự cố các phần tử float khiến phần tử container của chúng hiển thị không đúng cách. 
+  Điều này xảy ra vì các phần tử float được lấy ra khỏi luồng bình thường của tài liệu và 
+  kết quả là phần tử container chính của chúng không mở rộng để chứa chúng.
+
+Để khắc phục sự cố này, bản hack Clearfix thêm các thuộc tính CSS bổ sung 
+vào phần tử container chính để đảm bảo rằng phần tử đó sẽ mở rộng để chứa các phần tử con float của nó. 
+Một cách phổ biến để áp dụng hack Clearfix là thêm CSS sau vào phần tử container:
+<pre>
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}</pre>
+Điều này tạo ra một phần tử giả sau phần tử containr bị xóa khỏi mọi phần tử nổi, buộc vùng chứa phải mở rộng để chứa các phần tử con float của nó.
+</p> 
+<br><br>
+</body>
+
+</html>

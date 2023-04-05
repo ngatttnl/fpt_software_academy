@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        function getOption() {
+            var obj = document.getElementById("mySelect");
+            document.getElementById("demo").innerHTML = "You chose: " +
+                obj.options[obj.selectedIndex].text;
+        }
+        function select_onchange() {
+            var obj = document.getElementById("mySelect");
+            document.getElementById("demo").innerHTML =
+                obj.options[obj.selectedIndex].text;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Dropdown list deomo</h1>
+    <form>
+        Select your favorite fruit:
+        <select id="mySelect" onchange="select_onchange()">
+            <option>Apple</option>
+            <option>Orange</option>
+            <option>Pineapple</option>
+            <option>Banana</option>
+        </select>
+        <br><br>
+        <input type="button" onclick="getOption()" value="Click Me!">
+    </form>
+
+    <p id="demo"></p>
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column1">
+            <textarea style="height: 400px;" disabled class="code">
+<form>
+    Select your favorite fruit:
+    <select id="mySelect" onchange="select_onchange()">
+        <option>Apple</option>
+        <option>Orange</option>
+        <option>Pineapple</option>
+        <option>Banana</option>
+    </select>
+    <br><br>
+    <input type="button" onclick="getOption()" value="Click Me!">
+</form>
+            </textarea>
+        </div>
+        <div class="column1">
+            <textarea class="code" disabled>
+<script>
+    function getOption() {
+        var obj = document.getElementById("mySelect");
+        document.getElementById("demo").innerHTML = "You chose: " +
+            obj.options[obj.selectedIndex].text;
+    }
+    function select_onchange() {
+        var obj = document.getElementById("mySelect");
+        document.getElementById("demo").innerHTML =
+            obj.options[obj.selectedIndex].text;
+    }
+</script>
+            </textarea>
+        </div>
+    </div>
+</body>
+
+</html>

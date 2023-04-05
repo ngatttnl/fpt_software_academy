@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanh Nga - Sharing is caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+      div .frame {
+            max-width: 100%;
+            height: 500px;
+            background-color: whitesmoke;
+        }
+    </style>
+
+    <script>
+
+        function radio_onclick(item) {
+            //var tags = document.getElementsByClassName("list"); 
+
+            var frame = document.getElementById("myframe");
+            frame.src = item + ".html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="index.html">Thanh Nga</a>
+        <div class="topnav-right">
+            <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>
+            <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a>
+
+            <a href="https://www.w3schools.com/js/default.asp" target="_blank">Javascript</a>
+            <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp" target="_blank">Bootstrap</a>
+        </div>
+    </div>
+
+    <hr><br>
+    <div class="row frame">
+
+        <div class="column1">
+            <iframe id="myframe" src="button_demo.html" style="width: 100%; height: 500px; overflow: scroll;"></iframe>
+
+        </div>
+        <div class="column2">
+            <h2>Danh sách các ví dụ:</h2>
+            <input type="radio" id="button_href" checked name="fav_language"
+                onclick="return radio_onclick('button_demo')">
+            <label for="button_href">Button</label><br>
+
+            <input type="radio" id="top_nav" name="fav_language" onclick="return radio_onclick('top_nav')">
+            <label for="top_nav">Top Navigation </label><br>
+
+            <input type="radio" id="jsdemo" name="fav_language" onclick="return radio_onclick('jsdemo')">
+            <label for="jsdemo">List và onchange</label><br>
+
+            <input type="radio" id="flex" name="fav_language" onclick="return radio_onclick('flex')">
+            <label for="flex">Flex theo hàng</label><br>
+
+            <input type="radio" id="flex2" name="fav_language" onclick="return radio_onclick('flex2')">
+            <label for="flex2">Flex theo cột</label><br>
+
+            <input type="radio" id="collapse" name="fav_language" value="jsdemo"
+                onclick="return radio_onclick('collapse')">
+            <label for="collapse">Collapse</label><br>
+
+            <input type="radio" id="resp_form" name="fav_language" value="jsdemo"
+                onclick="return radio_onclick('resp_form')">
+            <label for="resp_form">Responsive Form</label><br>
+
+
+            <h2>Một số thứ cần nhớ:</h2>
+            <ol>
+                <li><a href="https://validator.w3.org/">Validate HTML</a></li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        &copy; Copyright 2023 by Thanh Nga. All Rights Reserved <br>
+        <a href="mailto: ngattt@hcmuaf.edu.vn">ngattt@hcmuaf.edu.vn</a>
+    </footer>
+
+
+</body>
+
+</html>

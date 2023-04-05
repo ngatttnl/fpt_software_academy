@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 1px solid black;
+        }
+
+        th:first-child,
+        td:first-child {
+            border-left: none;
+        }
+
+        th:last-child,
+        td:last-child {
+            border-right: none;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+        <tr>
+            <td>Row 1, Column 1</td>
+            <td>Row 1, Column 2</td>
+            <td>Row 1, Column 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Column 1</td>
+            <td>Row 2, Column 2</td>
+            <td>Row 2, Column 3</td>
+        </tr>
+    </table>
+
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        const balls = document.querySelectorAll('.ball');
+        let selectedBall = null;
+
+        balls.forEach(ball => {
+            ball.addEventListener('click', () => {
+                if (selectedBall === ball) {
+                    ball.classList.remove('selected');
+                    selectedBall = null;
+                } else if (selectedBall !== null) {
+                    if (ball.dataset.value === selectedBall.dataset.value) {
+                        ball.remove();
+                        selectedBall.remove();
+                        selectedBall = null;
+                    } else {
+                        selectedBall.classList.remove('selected');
+                        selectedBall = ball;
+                        ball.classList.add('selected');
+                    }
+                } else {
+                    selectedBall = ball;
+                    ball.classList.add('selected');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

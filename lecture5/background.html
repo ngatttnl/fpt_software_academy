@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        div .bg {
+            background: url("https://picsum.photos/200/200?random=1"),
+                url("https://picsum.photos/200/200?random=2") black;
+            background-repeat: repeat-x, no-repeat;
+            background-size: 25%, 100%;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Background demo</h2>
+    <pre>
+    background-repeat: repeat-x, no-repeat;
+    background-size: 25%, 100%;
+</pre>
+    Hình ảnh sẽ được lặp lại 100/25 = 4 lần theo chiều x
+    <div>
+        <div class="bg"></div>
+    </div>
+
+
+
+    <h1>Code</h1>
+    <div class="row">
+        <div class="column2">
+            <xmp>
+<div>
+    <div class="bg"></div>
+</div>
+
+
+            </xmp>
+        </div>
+        <div class="column2">
+            <pre>
+div .bg {
+    background: url("https://picsum.photos/200/200?random=1"),
+        url("https://picsum.photos/200/200?random=2") black;
+    background-repeat: repeat-x, no-repeat;
+    background-size: 25%, 100%;
+    width: 500px;
+    height: 500px;
+}
+      </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>
