@@ -52,10 +52,6 @@
             font-size: 24px;
             margin-bottom: 10px;
         }
-
-        .quote {
-            font-style: italic;
-        }
     </style>
 </head>
 
@@ -156,7 +152,41 @@ body {
                 quote2: '"Music is the divine way to tell beautiful, poetic things to the heart."',
                 image2: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
             },
+            {
+                category1: "Nature",
+                quote1: '"The earth has music for those who listen."',
+                image1: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+                category2: "Art",
+                quote2: '"Art is the lie that enables us to realize the truth."',
+                image2: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+            },
+            {
+                category1: "Technology",
+                quote1: '"Any sufficiently advanced technology is indistinguishable from magic."',
+                image1: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+                category2: "Science",
+                quote2: '"The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science."',
+                image2: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+            },
+            {
+                category1: "Sports",
+                quote1: '"You miss 100% of the shots you don’t take."',
+                image1: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+                category2: "Inspiration",
+                quote2: '"Believe you can and you’re halfway there."',
+                image2: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+            },
+            {
+                category1: "Fashion",
+                quote1: '"Fashion is about dressing according to what’s fashionable. Style is more about being yourself."',
+                image1: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+                category2: "Movies",
+                quote2: '"I’m going to make him an offer he can’t refuse."',
+                image2: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+            }
+            //Thêm đối tượng mới ở đây
         ];
+
 
         for (let i = 0; i < data.length; i++) {
             const row = document.createElement("div");

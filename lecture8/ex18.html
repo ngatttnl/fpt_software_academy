@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .quote {
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0 1rem;
+            text-align: justify;
+            flex-basis: 50%;
+        }
+
+        .image {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            flex-basis: 50%;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            margin: 0 10px;
+        }
+
+        .image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+        }
+
+
+
+        .author {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>Random Quotes</h1>
+
+    </div>
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        const quotes = [{ author: "Albert Einstein", quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", }, { author: "Nelson Mandela", quote: "I learned that courage was not the absence of fear, but the triumph over it. The brave man is not he who does not feel afraid, but he who conquers that fear.", }, { author: "Mother Teresa", quote: "Not all of us can do great things. But we can do small things with great love.", }, { author: "Steve Jobs", quote: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.", }, { author: "William Shakespeare", quote: "All the world's a stage, and all the men and women merely players: they have their exits and their entrances; and one man in his time plays many parts, his acts being seven ages.", }, { author: "Friedrich Nietzsche", quote: "Without music, life would be a mistake.", }, { author: "J.K. Rowling", quote: "It does not do to dwell on dreams and forget to live.", }, { author: "Mahatma Gandhi", quote: "You must be the change you wish to see in the world.", }, { author: "Martin Luther King Jr.", quote: "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that.", }, { author: "Harriet Tubman", quote: "I freed a thousand slaves. I could have freed a thousand more if only they knew they were slaves.", },];
+        const imageUrls = [];
+
+        let n = quotes.length;
+        for (let i = 0; i < n; i++) {
+            const id = Math.floor(Math.random() * 1000);
+            const imageUrl = `https://picsum.photos/200/200?random=${Math.floor(Math.random() * 1000)}`;
+            imageUrls.push(imageUrl);
+        }
+
+        const container = document.getElementById("container");
+
+        for (let i = 0; i < n; i+=2) {
+            const row = document.createElement("div");
+            row.classList.add("row");
+
+            const col1 = document.createElement("div");
+            col1.classList.add("col");
+
+            const img1 = document.createElement("img");
+            img1.classList.add("image");
+            img1.src = imageUrls[i];
+
+
+            const content1 = document.createElement("div");
+            content1.classList.add("content");
+
+            const quote1 = document.createElement("p");
+            quote1.classList.add("quote");
+            quote1.textContent = quotes[i].quote;
+           
+            content1.appendChild(quote1);
+
+            const author1 = document.createElement("p");
+            author1.classList.add("author");
+            author1.textContent = quotes[i].author;
+            content1.appendChild(author1);
+
+            col1.appendChild(img1);
+            col1.appendChild(content1);
+
+            const col2 = document.createElement("div");
+            col2.classList.add("col");
+
+            const img2 = document.createElement("img");
+            img2.classList.add("image");
+            img2.src = imageUrls[i + 1];
+
+            const content2 = document.createElement("div");
+            content2.classList.add("content");
+
+            const quote2 = document.createElement("p");
+            quote2.classList.add("quote");
+            quote2.textContent = quotes[i + 1].quote;
+            content2.appendChild(quote2);
+
+            const author2 = document.createElement("p");
+            author2.classList.add("author");
+            author2.textContent = quotes[i + 1].author;
+            content2.appendChild(author2);
+
+            col2.appendChild(content2);
+            col2.appendChild(img2);
+
+            row.appendChild(col1);
+            row.appendChild(col2);
+
+            container.appendChild(row);
+        }
+
+
+    </script>
+</body>
+
+</html>

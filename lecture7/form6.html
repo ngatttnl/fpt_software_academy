@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        .header .col {
+            flex: 1;
+            text-align: center;
+            border-right: 1px solid #fff;
+        }
+
+        .header .col:last-child {
+            border-right: none;
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .body .row:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .body .row:hover {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .body .row .col {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .footer input[type="text"],
+        .footer button {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 50%;
+            position: relative;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+        }
+
+        .info .col {
+            flex: 1;
+            font-weight: bold;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .info .col:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Danh sách khách hàng</h1>
+    <div class="container">
+        <div class="header">
+            <div class="col">Họ tên</div>
+            <div class="col">Email</div>
+            <div class="col">Số điện thoại</div>
+            <div class="col">Địa chỉ</div>
+            <div class="col">Thao tác</div>
+        </div>
+        <div class="body">
+            <!-- các dòng dữ liệu khách hàng sẽ được thêm vào đây -->
+        </div>
+        <div class="footer">
+            <input type="text" id="name" placeholder="Họ tên">
+            <input type="text" id="email" placeholder="Email">
+            <input type="text" id="phone" placeholder="Số điện thoại">
+            <input type="text" id="address" placeholder="Địa chỉ">
+            <button id="add">Thêm khách hàng</button>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Thông tin khách hàng</h2>
+            <div class="info">
+                <div class="col">Họ tên:</div>
+                <div id="modal-name" class="col"></div>
+            </div>
+            <div class="info">
+                <div class="col">Email:</div>
+                <div id="modal-email" class="col"></div>
+            </div>
+            <div class="info">
+                <div class="col">Số điện thoại:</div>
+                <div id="modal-phone" class="col"></div>
+            </div>
+            <div class="info">
+                <div class="col">Địa chỉ:</div>
+                <div id="modal-address" class="col"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

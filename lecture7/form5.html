@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Card Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <style>
+        /* CSS để tạo đường kẻ và định dạng bảng */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        #search {
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 2px solid #ccc;
+            outline: none;
+        }
+
+        #search:focus {
+            border-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Thời khóa biểu</h1>
+    <input type="text" id="search" placeholder="Tìm kiếm...">
+    <table id="timetable">
+        <tr>
+            <th>Giờ học</th>
+            <th>Môn học</th>
+            <th>Giảng viên</th>
+        </tr>
+        <tr>
+            <td>7:30 - 9:30</td>
+            <td>Toán cao cấp 1</td>
+            <td>Nguyễn Văn A</td>
+        </tr>
+        <tr>
+            <td>9:30 - 11:30</td>
+            <td>Lập trình web</td>
+            <td>Trần Thị B</td>
+        </tr>
+        <tr>
+            <td>13:30 - 15:30</td>
+            <td>Tiếng Anh 4</td>
+            <td>Phạm Văn C</td>
+        </tr>
+    </table>
+
+    <!--CODE-->
+    <div class="code-window-container">
+        <div class="code-window">
+            <div class="code-header">
+                <h3>HTML Code</h3>
+                <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+<h1>Thời khóa biểu</h1>
+<input type="text" id="search" placeholder="Tìm kiếm...">
+<table id="timetable">
+    <tr>
+        <th>Giờ học</th>
+        <th>Môn học</th>
+        <th>Giảng viên</th>
+    </tr>
+    <tr>
+        <td>7:30 - 9:30</td>
+        <td>Toán cao cấp 1</td>
+        <td>Nguyễn Văn A</td>
+    </tr>
+    <tr>
+        <td>9:30 - 11:30</td>
+        <td>Lập trình web</td>
+        <td>Trần Thị B</td>
+    </tr>
+    <tr>
+        <td>13:30 - 15:30</td>
+        <td>Tiếng Anh 4</td>
+        <td>Phạm Văn C</td>
+    </tr>
+</table>
+
+            </textarea>
+        </div>
+        <div class="code-window">
+            <div class="code-header">
+                <h3>CSS Code</h3>
+                <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
+            </div>
+            <textarea class="code-area">
+/* CSS để tạo đường kẻ và định dạng bảng */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+#search {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    outline: none;
+}
+
+#search:focus {
+    border-color: #666;
+}
+            </textarea>
+        </div>
+
+    </div>
+    <script>
+        // JavaScript để thêm tính năng tìm kiếm và thay đổi màu sắc khi hover
+        const search = document.getElementById('search');
+        const table = document.getElementById('timetable');
+        const rows = table.getElementsByTagName('tr');
+
+        // Hàm tìm kiếm
+        function searchFunction() {
+            const filter = search.value.toUpperCase();
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let match = false;
+                for (let j = 0; j < cells.length; j++) {
+                    const cellText = cells[j].textContent.toUpperCase();
+                    if (cellText.indexOf(filter) > -1) {
+                        match = true;
+                        break;
+                    }
+                }
+                if (match) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+
+        // Sự kiện tìm kiếm
+        search.addEventListener('keyup', searchFunction);
+
+        // Sự kiện hover
+        for (let i = 0; i < rows.length; i++) {
+            rows[i].addEventListener('mouseover', function () {
+                this.style.backgroundColor = "#ddd";
+            });
+            rows[i].addEventListener('mouseout', function () {
+                this.style.backgroundColor = "";
+            });
+        }
+    </script>
+</body>
+
+</html>
