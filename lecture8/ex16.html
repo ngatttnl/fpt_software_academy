@@ -85,30 +85,66 @@
 
     </div>
     <script>
-        const balls = document.querySelectorAll('.ball');
         let selectedBall = null;
+        let startX = 0;
+        let startY = 0;
 
-        balls.forEach(ball => {
-            ball.addEventListener('click', () => {
-                if (selectedBall === ball) {
-                    ball.classList.remove('selected');
-                    selectedBall = null;
-                } else if (selectedBall !== null) {
-                    if (ball.dataset.value === selectedBall.dataset.value) {
-                        ball.remove();
-                        selectedBall.remove();
-                        selectedBall = null;
-                    } else {
-                        selectedBall.classList.remove('selected');
-                        selectedBall = ball;
-                        ball.classList.add('selected');
-                    }
-                } else {
-                    selectedBall = ball;
-                    ball.classList.add('selected');
-                }
+        function startDrag(ball) {
+            selectedBall = ball;
+            startX = ball.offsetLeft;
+            startY = ball.offsetTop;
+        }
+
+        function drag(event) {
+            if (selectedBall) {
+                const dx = event.clientX - startX;
+                const dy = event.clientY - startY;
+                selectedBall.style.left = dx + "px";
+                selectedBall.style.top = dy + "px";
+            }
+        }
+
+        function endDrag() {
+            if (selectedBall) {
+                // Check for lines
+                // Remove balls if necessary
+                // Add points to score
+                // Check for end of game
+                selectedBall = null;
+            }
+        }
+
+        const balls = document.querySelectorAll(".ball");
+
+        for (let i = 0; i < balls.length; i++) {
+            const ball = balls[i];
+            ball.addEventListener("mousedown", function (event) {
+                startDrag(ball);
             });
-        });
+        }
+
+        document.addEventListener("mousemove", drag);
+        document.addEventListener("mouseup", endDrag);
+
+        function isBoardFull() {
+            const balls = document.querySelectorAll(".ball");
+            for (let i = 0; i < balls.length; i++) {
+                if (balls[i].style.display === "none") {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function isGameOver() {
+            if (isBoardFull()) {
+                return true;
+            }
+            // Check for lines
+            // Return false if there are any lines
+            return true;
+        }
+
 
     </script>
 </body>

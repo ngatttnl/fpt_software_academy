@@ -7,46 +7,61 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js"></script>
     <style>
-        table {
-            border-collapse: collapse;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        tr {
-            border-bottom: 1px solid black;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
         }
 
-        th:first-child,
-        td:first-child {
-            border-left: none;
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
         }
 
-        th:last-child,
-        td:last-child {
-            border-right: none;
+        .col {
+            width: 40%;
+            margin: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        
+        .image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            margin-top: 10px;
+        }
+
+        .heading {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .quote {
+            font-style: italic;
+        }
     </style>
 </head>
 
 <body>
-    <table>
-        <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-            <th>Column 3</th>
-        </tr>
-        <tr>
-            <td>Row 1, Column 1</td>
-            <td>Row 1, Column 2</td>
-            <td>Row 1, Column 3</td>
-        </tr>
-        <tr>
-            <td>Row 2, Column 1</td>
-            <td>Row 2, Column 2</td>
-            <td>Row 2, Column 3</td>
-        </tr>
-    </table>
+
+    <div id="container"></div>
 
 
     <!--CODE-->
@@ -57,7 +72,7 @@
                 <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
             </div>
             <textarea class="code-area">
-
+                <div id="container"></div>
 
             </textarea>
         </div>
@@ -67,36 +82,147 @@
                 <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
             </div>
             <textarea class="code-area">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.col {
+    width: 40%;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.quote {
+    font-style: italic;
+}
 
             </textarea>
         </div>
 
     </div>
     <script>
-        const balls = document.querySelectorAll('.ball');
-        let selectedBall = null;
+        const container = document.getElementById("container");
 
-        balls.forEach(ball => {
-            ball.addEventListener('click', () => {
-                if (selectedBall === ball) {
-                    ball.classList.remove('selected');
-                    selectedBall = null;
-                } else if (selectedBall !== null) {
-                    if (ball.dataset.value === selectedBall.dataset.value) {
-                        ball.remove();
-                        selectedBall.remove();
-                        selectedBall = null;
-                    } else {
-                        selectedBall.classList.remove('selected');
-                        selectedBall = ball;
-                        ball.classList.add('selected');
-                    }
-                } else {
-                    selectedBall = ball;
-                    ball.classList.add('selected');
-                }
-            });
-        });
+        const data = [
+            {
+                category1: "Photography",
+                quote1: '"Taking an image, freezing a moment, reveals how rich reality truly is."',
+                image1: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+                category2: "Travel",
+                quote2: '"The world is a book and those who do not travel read only one page."',
+                image2: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+            },
+            {
+                category1: "Food",
+                quote1: '"One cannot think well, love well, sleep well, if one has not dined well."',
+                image1: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+                category2: "Music",
+                quote2: '"Music is the divine way to tell beautiful, poetic things to the heart."',
+                image2: `https://picsum.photos/600/400?random=${Math.floor(Math.random() * 1000)}`,
+            },
+        ];
+
+        for (let i = 0; i < data.length; i++) {
+            const row = document.createElement("div");
+            row.classList.add("row");
+
+            const col1 = document.createElement("div");
+            col1.classList.add("col");
+
+            const content1 = document.createElement("div");
+            content1.classList.add("content");
+
+            const heading1 = document.createElement("h1");
+            heading1.classList.add("heading");
+            heading1.textContent = data[i].category1;
+            content1.appendChild(heading1);
+
+            const quote1 = document.createElement("p");
+            quote1.classList.add("quote");
+            quote1.textContent = data[i].quote1;
+            content1.appendChild(quote1);
+
+            const img1 = document.createElement("img");
+            img1.classList.add("image");
+            img1.src = data[i].image1;
+
+            if (i % 2 === 0) {
+                col1.appendChild(img1);
+                col1.appendChild(content1);
+            } else {
+                col1.appendChild(content1);
+                col1.appendChild(img1);
+            }
+
+            const col2 = document.createElement("div");
+            col2.classList.add("col");
+
+            const content2 = document.createElement("div");
+            content2.classList.add("content");
+
+            const heading2 = document.createElement("h1");
+            heading2.classList.add("heading");
+            heading2.textContent = data[i].category2;
+            content2.appendChild(heading2);
+
+            const quote2 = document.createElement("p");
+            quote2.classList.add("quote");
+            quote2.textContent = data[i].quote2;
+            content2.appendChild(quote2);
+
+            const img2 = document.createElement("img");
+            img2.classList.add("image");
+            img2.src = data[i].image2;
+
+            if (i % 2 === 0) {
+                col2.appendChild(content2);
+                col2.appendChild(img2);
+            } else {
+                col2.appendChild(img2);
+                col2.appendChild(content2);
+            }
+
+            row.appendChild(col1);
+            row.appendChild(col2);
+
+            container.appendChild(row);
+        }
 
     </script>
 </body>

@@ -87,7 +87,32 @@
                 <button class="copy-button" id="htmlCopy" onclick="html_onclick()">Copy</button>
             </div>
             <textarea class="code-area">
-
+<div class="memory-game">
+    <div class="memory-card" data-name="diamond"><img class="front-face" src="images/diamond.png" alt="Diamond"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="diamond"><img class="front-face" src="images/diamond.png" alt="Diamond"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="paper-plane"><img class="front-face" src="images/paper-plane.jpeg"
+            alt="Paper Plane"><img class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="paper-plane"><img class="front-face" src="images/paper-plane.jpeg"
+            alt="Paper Plane"><img class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="anchor"><img class="front-face" src="images/anchor.png" alt="Anchor"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="anchor"><img class="front-face" src="images/anchor.png" alt="Anchor"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="bolt"><img class="front-face" src="images/bolt.png" alt="Bolt"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="bolt"><img class="front-face" src="images/bolt.png" alt="Bolt"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="cube"><img class="front-face" src="images/cube.jpg" alt="Cube"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="cube"><img class="front-face" src="images/cube.jpg" alt="Cube"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="leaf"><img class="front-face" src="images/leaf.jpg" alt="Leaf"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+    <div class="memory-card" data-name="leaf"><img class="front-face" src="images/leaf.jpg" alt="Leaf"><img
+            class="back-face" src="images/back.jpg" alt="Back"></div>
+</div>
 
             </textarea>
         </div>
@@ -97,6 +122,111 @@
                 <button class="copy-button" id="cssCopy" onclick="css_onclick()">Copy</button>
             </div>
             <textarea class="code-area">
+.memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+.memory-card {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    perspective: 1000px;
+}
+
+.front-face,
+.back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(0deg);
+}
+
+.back-face {
+    transform: rotateY(180deg);
+}
+
+.memory-card:hover .front-face {
+    transform: rotateY(180deg);
+}
+
+.match {
+    opacity: 0.6;
+    pointer-events: none;
+}
+//script
+// Get all the memory cards
+const cards = document.querySelectorAll('.memory-card');
+
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+
+    this.classList.add('flip');
+
+    if (!hasFlippedCard) {
+        // first click
+        hasFlippedCard = true;
+        firstCard = this;
+        return;
+    }
+
+    // second click
+    secondCard = this;
+
+    checkForMatch();
+}
+
+function checkForMatch() {
+    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+
+    isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+    resetBoard();
+}
+
+function unflipCards() {
+    lockBoard = true;
+
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+
+        resetBoard();
+    }, 1000);
+}
+
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+    });
+})();
+
+cards.forEach(card => card.addEventListener('click', flipCard));
 
             </textarea>
         </div>
