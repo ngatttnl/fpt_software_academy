@@ -7,12 +7,78 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js"></script>
     <style>
-       
+        /* Style for form elements */
+        form div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        select[multiple] {
+            height: 100px;
+        }
+
+        select:disabled {
+            background-color: #f1f1f1;
+            color: #999;
+        }
     </style>
 </head>
 
 <body>
-    
+    <form>
+        <div>
+            <label for="custom-select-1">Custom select 1:</label>
+            <select id="custom-select-1">
+                <option value="option-1">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3">Option 3</option>
+                <option value="option-4">Option 4</option>
+            </select>
+        </div>
+        <div>
+            <label for="disabled-custom-select-1">Disabled custom select 1:</label>
+            <select id="disabled-custom-select-1" disabled>
+                <option value="option-1">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3">Option 3</option>
+                <option value="option-4">Option 4</option>
+            </select>
+        </div>
+        <div>
+            <label for="multiple-custom-select-1">Multiple custom select 1:</label>
+            <select id="multiple-custom-select-1" multiple>
+                <option value="option-1">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3">Option 3</option>
+                <option value="option-4">Option 4</option>
+            </select>
+        </div>
+        <div>
+            <label for="disabled-multiple-custom-select-1">Disabled multiple custom select 1:</label>
+            <select id="disabled-multiple-custom-select-1" multiple disabled>
+                <option value="option-1">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3">Option 3</option>
+                <option value="option-4">Option 4</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
 
     <!--CODE-->
     <div class="code-window-container">
@@ -38,7 +104,7 @@
 
     </div>
     <script>
-        
+
     </script>
 </body>
 

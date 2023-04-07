@@ -4,6 +4,9 @@
 <head>
     <title>Thanh Nga - Sharing is caring</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FPT Software Academy - Khóa học HTML, CSS, Javascript">
+    <meta name="keywords" content="FPT Software Academy, HTML, CSS, Javascript, Trần Thị Thanh Nga">
+    <meta name="author" content="Trần Thị Thanh Nga">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <style>
@@ -11,10 +14,7 @@
     </style>
 
     <script>
-
         function radio_onclick(item) {
-            //var tags = document.getElementsByClassName("list"); 
-
             var frame = document.getElementById("myframe");
             frame.src = "lecture8/" + item + ".html";
         }
@@ -34,7 +34,7 @@
             <a href="lecture6.html">Lecture 6</a>
             <a href="lecture7.html">Lecture 7</a>
             <a href="lecture8.html" class="active">Lecture 8</a>
-            <a href="lecture9.html">Lecture 9</a>
+
             <a class="call_to_action" href="tel: +0912345678">Call me</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
@@ -92,7 +92,7 @@
 
             <input type="radio" id="ex15" name="fav_language" onclick="return radio_onclick('ex15')">
             <label for="ex15">Example 15</label><br>
-            
+
             <input type="radio" id="ex16" name="fav_language" onclick="return radio_onclick('ex16')">
             <label for="ex16">Example 16</label><br>
             <input type="radio" id="ex17" name="fav_language" onclick="return radio_onclick('ex17')">

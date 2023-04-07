@@ -1,3 +1,7 @@
+function radio_onclick(path, item) {
+  var frame = document.getElementById("myframe");
+  frame.src = path + item + ".html";
+}
 
 function myFunction() {
   var x = document.getElementById("myTopnav");
